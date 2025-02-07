@@ -7,7 +7,7 @@ import x from "../../assets/images/x.svg";
 
 const Footer = () => {
   return (
-    <footer className="mt-auto px-4 md:px-10 lg:px-20 py-7 sm:p-7 bg-gray-50 lg:bg-gray-100">
+    <footer className="mt-auto px-4 md:px-10 lg:px-20 py-7 sm:p-7 bg-gray-50">
       <div className="w-full border-t pt-5 flex justify-between items-center flex-wrap">
         <img src={logo} alt="Talent councel logo" />
 

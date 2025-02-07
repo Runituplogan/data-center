@@ -9,6 +9,7 @@ import white_star from "../assets/images/white-star.png";
 import service_calendar from "../assets/images/service-calendar.png";
 import Footer from "../components/global/Footer";
 import SuccessfulPlacements from "../components/SuccessfulPlacements";
+import SendUsMessage from "../components/SendUsMessage";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -97,44 +98,50 @@ const Home = () => {
           </div>
 
           {/* Open Roles */}
-          <div className="w-full mt-16 mb-10 text-[#121212]">
-            <h2 className="w-full text-center font-medium text-lg md:text-xl lg:text-2xl xl:text-3xl">
-              Open Roles
-            </h2>
+          <div className="w-full">
+            <div className="max-w-[700px] w-full mx-auto">
+              <div className="w-full mt-16 mb-10 text-[#121212]">
+                <h2 className="w-full text-center font-medium text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                  Open Roles
+                </h2>
 
-            <div className="rounded-4xl mt-10 p-10 w-full relative radical-blue overflow-hidden px-10 md:px-20 lg:px-36">
-              <img
-                src={blue_sun}
-                alt="radical eclipse"
-                className="absolute top-0 w-[400px] z-0 sm:left-48"
-              />
+                <div className="rounded-4xl mt-10 p-10 w-full relative radical-blue overflow-hidden px-10 md:px-20 lg:px-36">
+                  <img
+                    src={blue_sun}
+                    alt="radical eclipse"
+                    className="absolute top-0 w-[400px] z-0 sm:left-48"
+                  />
 
-              <h1 className="w-full text-center font-medium text-white text-xl md:text-3xl z-10 isolate">
-                Exciting Opportunities Await
-              </h1>
-              <p className="text-center w-full text-white text-sm lg:text-base xl:text-lg mt-2 z-10 isolate pb-20">
-                Explore a variety of open positions across industries. Whether
-                you're a seasoned professional or a fresh talent, there's
-                something for you
-              </p>
-            </div>
+                  <h1 className="w-full text-center font-medium text-white text-xl md:text-3xl z-10 isolate">
+                    Exciting Opportunities Await
+                  </h1>
+                  <p className="text-center w-full text-white text-sm lg:text-base xl:text-lg mt-2 z-10 isolate pb-20">
+                    Explore a variety of open positions across industries.
+                    Whether you're a seasoned professional or a fresh talent,
+                    there's something for you
+                  </p>
+                </div>
 
-            <div className="relative w-full md:px-7 -mt-20">
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-5 w-full">
-                {open_roles.map((item, index) => (
-                  <div className="rounded-lg bg-white shadow" key={index}>
-                    <div className="relative h-20 w-full overflow-hidden">
-                      <div className="absolute rounded-t-md inset-0 bg-black opacity-45"></div>
-                      <img
-                        src={item.imgSrc}
-                        className="h-20 object-cover ease transition-all duration-200 hover:scale-105 rounded-t-lg w-full"
-                        alt={item.label}
-                      />
-                    </div>
+                <div className="relative w-full md:px-7 -mt-20">
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-5 w-full">
+                    {open_roles.map((item, index) => (
+                      <div className="rounded-lg bg-white shadow" key={index}>
+                        <div className="relative h-20 w-full overflow-hidden">
+                          <div className="absolute rounded-t-md inset-0 bg-black opacity-45"></div>
+                          <img
+                            src={item.imgSrc}
+                            className="h-20 object-cover ease transition-all duration-200 hover:scale-105 rounded-t-lg w-full"
+                            alt={item.label}
+                          />
+                        </div>
 
-                    <p className="text-center w-full py-5 px-3">{item.label}</p>
+                        <p className="text-center w-full py-5 px-3">
+                          {item.label}
+                        </p>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
             </div>
           </div>
@@ -203,6 +210,8 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+        <SendUsMessage />
       </section>
 
       <Footer />
