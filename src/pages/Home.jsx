@@ -11,13 +11,18 @@ import Footer from "../components/global/Footer";
 import SuccessfulPlacements from "../components/SuccessfulPlacements";
 import SendUsMessage from "../components/SendUsMessage";
 import Marquee from "../components/Marquee";
+import MobileNavbar from "../components/global/MobileNavbar";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleOpen = () => {
+    setIsOpen(true);
+  };
   return (
     <main className="relative w-full">
-      <Navbar />
+      <Navbar onOpen={handleOpen} />
+      <MobileNavbar onClose={() => setIsOpen(false)} open={isOpen} />
 
       <section className="pt-36 md:pt-40 w-full px-4 md:px-0">
         <div className="w-full">
@@ -123,7 +128,7 @@ const Home = () => {
                   </p>
                 </div>
 
-                <div className="relative w-full md:px-7 -mt-20">
+                <div className="relative w-full md:px-7 -my-20 z-20">
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-5 w-full">
                     {open_roles.map((item, index) => (
                       <div className="rounded-lg bg-white shadow" key={index}>
