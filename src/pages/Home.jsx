@@ -10,6 +10,7 @@ import service_calendar from "../assets/images/service-calendar.png";
 import Footer from "../components/global/Footer";
 import SuccessfulPlacements from "../components/SuccessfulPlacements";
 import SendUsMessage from "../components/SendUsMessage";
+import Marquee from "../components/Marquee";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -148,14 +149,14 @@ const Home = () => {
 
           {/* Successful placements blue background */}
           <div className="w-full">
-            <div className="mt-10 p-10 w-full relative radical-blue overflow-hidden px-10 md:px-20 lg:px-36">
+            <div className="mt-10 py-10 w-full relative radical-blue overflow-hidden h-[500px]">
               <img
                 src={blue_sun}
                 alt="radical eclipse"
                 className="absolute top-0 w-[700px] -z-0 sm:left-[50%] -translate-x-[45%]"
               />
 
-              <div className="w-full flex justify-start md:justify-center items-start gap-5 sm:gap-10 md:gap-20 md:flex-row flex-col pt-10">
+              <div className="w-full flex justify-start md:justify-center items-start gap-5 sm:gap-10 md:gap-20 md:flex-row flex-col pt-10 px-10 md:px-20 lg:px-36">
                 <div className="flex justify-start items-center gap-7">
                   <p className="w-full text-center font-medium text-white text-xl md:text-2xl z-10">
                     Successful
@@ -173,6 +174,12 @@ const Home = () => {
                   talent with the right roles. Trust us to help you achieve your
                   hiring goals effortlessly.
                 </p>
+              </div>
+
+              <div className="mt-20 w-full space-y-8">
+                <Marquee />
+                <Marquee delay="2.5" direction="right" />
+                <Marquee delay="4.9" />
               </div>
             </div>
           </div>

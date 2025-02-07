@@ -9,6 +9,17 @@ import automEngr from "../assets/images/automation-engineers.png";
 import hvacDesEngr from "../assets/images/hvac-design-engineers.png";
 import civilEngr from "../assets/images/civil-engineers.png";
 
+export const placements = [
+  "HVAC Technicians",
+  "Industral Electricians",
+  "Field Service Technicians",
+  "Electrical Engineers",
+  "Construction Project Managers",
+  "Systems Administrators",
+  "Automation Engineers",
+  "Structural Engineers",
+];
+
 export const open_roles = [
   {
     label: "Data Center Technicians",
