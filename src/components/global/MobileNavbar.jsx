@@ -26,6 +26,10 @@ const MobileNavbar = ({ open, onClose }) => {
         <Link to={"/"} className="text-[#3A3A3A] hover:underline">
           Successful Placements
         </Link>
+
+        <button className="rounded-full text-white py-3 px-4 w-full blue-gradient">
+          Contact Us
+        </button>
       </div>
     </nav>
   );
