@@ -12,6 +12,7 @@ import SuccessfulPlacements from "../components/SuccessfulPlacements";
 import SendUsMessage from "../components/SendUsMessage";
 import Marquee from "../components/Marquee";
 import MobileNavbar from "../components/global/MobileNavbar";
+import Calendy from "../components/Calendy";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,35 +27,39 @@ const Home = () => {
 
       <section className="pt-36 md:pt-40 w-full px-4 md:px-0">
         <div className="w-full">
-          <div className="w-full max-w-[780px] mx-auto">
+          <div className="w-full max-w-[1000px] mx-auto">
             <HeroCard />
           </div>
 
-          <div className="w-full max-w-[780px] mx-auto">
-            <div className="w-full gap-2 sm:gap-7 grid grid-cols-4 lg:grid-cols-5 mt-10 rounded-md border-gray-100 border p-4">
+          <div className="w-full max-w-[1000px] mx-auto">
+            <div className="w-full gap-2 sm:gap-7 grid grid-cols-4 lg:grid-cols-5 mt-10 rounded-md border-[#E2E2E2] border-y p-4">
               <div className="col-span-1 lg:col-span-2">
-                <p className="font-medium text-xs md:text-sm lg:text-xl xl:text-2xl">
+                <p className="font-medium text-xl md:text-2xl lg:text-3xl xl:text-4xl">
                   Successful
                   <br /> Placements
                 </p>
               </div>
               <div>
-                <p className="font-semibold text-sm lg:text-xl xl:text-2xl">
+                <p className="font-semibold text-xl md:text-2xl lg:text-3xl xl:text-4xl">
                   +50
                 </p>
-                <p className="text-xs md:text-sm text-[#121212]">Partnership</p>
+                <p className="text-xs sm:text-sm md:text-base text-[#121212] mt-2">
+                  Partnership
+                </p>
               </div>
               <div>
-                <p className="font-semibold text-sm lg:text-xl xl:text-2xl">
+                <p className="font-semibold text-xl md:text-2xl lg:text-3xl xl:text-4xl">
                   +1000
                 </p>
-                <p className="text-xs md:text-sm text-[#121212]">Partnership</p>
+                <p className="text-xs sm:text-sm md:text-base text-[#121212] mt-2">
+                  Partnership
+                </p>
               </div>
               <div className="text-center">
-                <p className="font-semibold text-sm lg:text-xl xl:text-2xl">
+                <p className="font-semibold text-xl md:text-2xl lg:text-3xl xl:text-4xl">
                   23
                 </p>
-                <p className="text-xs md:text-sm text-[#121212]">
+                <p className="text-xs sm:text-sm md:text-base text-[#121212] mt-2">
                   State Hired In
                 </p>
               </div>
@@ -62,14 +67,14 @@ const Home = () => {
           </div>
 
           {/* About us */}
-          <div className="w-full max-w-[780px] mx-auto">
+          <div className="w-full max-w-[1000px] mx-auto">
             <div className="w-full mt-14 mb-10 text-[#121212] mx-auto">
-              <h2 className="w-full text-center font-medium text-lg md:text-xl lg:text-2xl">
+              <h2 className="w-full text-center font-medium text-xl md:text-3xl">
                 About Us
               </h2>
 
               <div className="md:mt-12 mt-5 grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div className="md:space-y-3 space-y-4 text-sm sm:text-base">
+                <div className="space-y-5 text-sm sm:text-base md:text-lg">
                   <p className="md:text-left text-center">
                     We are a specialized team building and talent management
                     firm dedicated to solving the workforce challenges of the
@@ -97,7 +102,7 @@ const Home = () => {
                 <img
                   src={companyWorkersImg}
                   alt="company workers"
-                  className="rounded-md"
+                  className="rounded-md w-full"
                 />
               </div>
             </div>
@@ -105,9 +110,9 @@ const Home = () => {
 
           {/* Open Roles */}
           <div className="w-full">
-            <div className="max-w-[700px] w-full mx-auto">
+            <div className="max-w-[1000px] w-full mx-auto">
               <div className="w-full mt-16 mb-10 text-[#121212]">
-                <h2 className="w-full text-center font-medium text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                <h2 className="w-full text-center font-medium text-xl md:text-2xl lg:text-3xl">
                   Open Roles
                 </h2>
 
@@ -115,13 +120,13 @@ const Home = () => {
                   <img
                     src={blue_sun}
                     alt="radical eclipse"
-                    className="absolute top-0 w-[400px] z-0 sm:left-48"
+                    className="absolute top-0 h-[200px] z-0 sm:left-48"
                   />
 
-                  <h1 className="w-full text-center font-medium text-white text-xl md:text-3xl z-10 isolate">
+                  <h1 className="w-full text-center font-medium text-white text-2xl md:text-3xl lg:text-4xl z-10 isolate">
                     Exciting Opportunities Await
                   </h1>
-                  <p className="text-center w-full text-white text-sm lg:text-base xl:text-lg mt-2 z-10 isolate pb-20">
+                  <p className="text-center w-full text-white text-sm lg:text-base xl:text-lg mt-4 z-10 isolate pb-20">
                     Explore a variety of open positions across industries.
                     Whether you're a seasoned professional or a fresh talent,
                     there's something for you
@@ -129,11 +134,14 @@ const Home = () => {
                 </div>
 
                 <div className="relative w-full md:px-7 -my-20 z-20">
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-5 w-full">
+                  <div className="flex justify-center items-center gap-5 md:gap-7 flex-wrap w-full md:px-10">
                     {open_roles.map((item, index) => (
-                      <div className="rounded-lg bg-white shadow" key={index}>
+                      <div
+                        className="rounded-lg bg-white shadow w-[250px] h-[160px]"
+                        key={index}
+                      >
                         <div className="relative h-20 w-full overflow-hidden">
-                          <div className="absolute rounded-t-md inset-0 bg-black opacity-45"></div>
+                          <div className="absolute rounded-t-md inset-0 bg-black opacity-30"></div>
                           <img
                             src={item.imgSrc}
                             className="h-20 object-cover ease transition-all duration-200 hover:scale-105 rounded-t-lg w-full"
@@ -141,7 +149,7 @@ const Home = () => {
                           />
                         </div>
 
-                        <p className="text-center w-full py-5 px-3">
+                        <p className="text-center font-medium w-full py-5 px-10 inter sm:text-lg leading-6">
                           {item.label}
                         </p>
                       </div>
@@ -158,12 +166,12 @@ const Home = () => {
               <img
                 src={blue_sun}
                 alt="radical eclipse"
-                className="absolute top-0 w-[700px] -z-0 sm:left-[50%] -translate-x-[45%]"
+                className="absolute top-0 w-[940px] -z-0 sm:left-[50%] -translate-x-[45%]"
               />
 
-              <div className="w-full flex justify-start md:justify-center items-start gap-5 sm:gap-10 md:gap-20 md:flex-row flex-col pt-10 px-10 md:px-20 lg:px-36">
+              <div className="w-full flex justify-start items-start gap-5 sm:gap-10 md:gap-36 md:flex-row flex-col pt-10 px-10 md:px-20">
                 <div className="flex justify-start items-center gap-7">
-                  <p className="w-full text-center font-medium text-white text-xl md:text-2xl z-10">
+                  <p className="w-full text-center font-medium text-white text-2xl md:text-3xl lg:text-4xl z-10">
                     Successful
                     <br /> Placements
                   </p>
@@ -174,7 +182,7 @@ const Home = () => {
                   />
                 </div>
 
-                <p className="text-white w-full md:w-[50%] lg:w-[30%] text-base md:text-lg z-10">
+                <p className="text-white w-full md:w-[50%] text-lg md:text-xl lg:text-2xl z-10">
                   With countless successful placements, we connect the right
                   talent with the right roles. Trust us to help you achieve your
                   hiring goals effortlessly.
@@ -183,8 +191,8 @@ const Home = () => {
 
               <div className="mt-20 w-full space-y-8">
                 <Marquee />
-                <Marquee delay="2.5" direction="right" />
-                <Marquee delay="4.9" />
+                <Marquee delay="1" direction="right" />
+                <Marquee delay="1.9" />
               </div>
             </div>
           </div>
@@ -197,8 +205,8 @@ const Home = () => {
           </div>
           {/* Sate placement section */}
           <div className="w-full">
-            <div className="mt-16 max-w-[780px] mb-10 bg-white flex flex-col items-center mx-auto">
-              <h1 className="w-full text-center text-[#121212] font-semibold text-xl md:text-3xl">
+            <div className="mt-16 max-w-[1200px] mb-10 bg-white flex flex-col items-center mx-auto">
+              <h1 className="w-full text-center text-[#121212] font-medium text-xl sm:text-2xl md:text-3xl">
                 States With Placements
               </h1>
 
@@ -208,17 +216,20 @@ const Home = () => {
 
           {/* Find out how we can add more value to your team today! section */}
           <div className="w-full mt-16  bg-[#F4F9FF] py-10">
-            <div className="mt-16 max-w-[780px] mb-10 mx-auto">
-              <h1 className="w-full text-center text-[#121212] font-semibold text-xl md:text-3xl">
+            <div className="mt-16 max-w-[1000px] mb-10 mx-auto">
+              <h1 className="w-full text-center text-[#121212] font-medium text-xl sm:text-2xl md:text-3xl">
                 Find out how we can add more
                 <br /> value to your team today!
               </h1>
 
               <img
                 src={service_calendar}
-                className="mt-5"
+                className="mt-10"
                 alt="State placement map"
               />
+            </div>
+            <div className="mt-16 max-w-[1000px] mb-10 mx-auto">
+              <Calendy />
             </div>
           </div>
         </div>

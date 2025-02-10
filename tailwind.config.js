@@ -10,6 +10,9 @@ export default {
       backgroundColor: {},
       fontFamily: {},
       backgroundImage: {},
+      content: [
+        ..."./node_modules/tailwind-datepicker-react/dist/**/*.js", // <--- Add this line
+      ],
     },
   },
 };

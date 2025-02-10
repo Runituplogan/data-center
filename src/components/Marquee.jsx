@@ -12,7 +12,7 @@ const Marquee = ({ delay = 0.1, direction = "left" }) => {
         animate={{ x: direction === "left" ? "-100%" : "100%" }}
         transition={{
           repeat: Infinity,
-          duration: 15,
+          duration: 35,
           ease: "linear",
           delay,
         }}
@@ -20,10 +20,10 @@ const Marquee = ({ delay = 0.1, direction = "left" }) => {
         {[...placements, ...placements].map((item, index) => (
           <div
             key={index}
-            className="px-7 min-w-max py-2 bg-black text-white rounded-lg shadow-md flex justify-between items-center gap-3"
+            className="px-7 min-w-max py-2 bg-black text-white rounded-lg shadow-md flex justify-between items-center gap-5"
           >
             <img src={radii} alt="radii" className="w-6" />
-            <p>{item}</p>
+            <p className="text-base md:text-lg">{item}</p>
           </div>
         ))}
       </motion.div>

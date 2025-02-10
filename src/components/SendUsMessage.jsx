@@ -13,18 +13,18 @@ const SendUsMessage = () => {
   return (
     <section className="w-full py-20 bg-white">
       <div className="mx-auto w-full max-w-[1000px]">
-        <div className="w-full max-w-lg mx-auto px-0 lg:px-16">
-          <h1 className="w-full text-center text-[#121212] font-semibold text-xl md:text-3xl">
+        <div className="w-full max-w-lg mx-auto px-0 lg:px-12">
+          <h1 className="w-full text-center text-[#121212] font-medium text-xl md:text-2xl lg:text-3xl xl:text-4xl">
             Send us a message
           </h1>
 
-          <p className="w-full text-center text-[#121212] mt-5">
+          <p className="w-full text-center text-[#121212] mt-5 text-base md:text-lg">
             We’d love to hear from you. Whether you’re looking to hire or
             seeking your next opportunity, reach out today.
           </p>
         </div>
 
-        <div className="flex md:flex-row flex-col justify-between items-start gap-10 mt-10 xl:px-0 md:px-5">
+        <div className="flex md:flex-row flex-col justify-between items-start gap-10 mt-14 xl:px-0 md:px-5">
           <div className="md:w-[50%] lg:w-[40%] w-full">
             <div className="mb-4">
               <label>Name *</label>
@@ -97,11 +97,11 @@ const SendUsMessage = () => {
               </div>
             </div>
 
-            <p className="w-full pt-5 font-medium border-t border-white z-20 text-white text-center mt-6">
+            <p className="w-full pt-5 font-medium border-t border-[#FAFAFA] relative isolate z-10 text-white text-center mt-6">
               Connect with Us
             </p>
 
-            <div className="flex justify-center items-center gap-4 md:gap-4 mt-10">
+            <div className="flex justify-center items-center gap-4 md:gap-4 mt-10 relative">
               <Link to={"/"} className="text-[#3A3A3A] z-20">
                 <img src={linkedin} alt="linkedin" />
               </Link>
@@ -119,7 +119,7 @@ const SendUsMessage = () => {
             <img
               src={blue_sun}
               alt="radical eclipse"
-              className="absolute -bottom-20 w-full h-[400px] z-0 rotate-180 isolate"
+              className="absolute -bottom-24 scale-200 right-0 left-0 w-full h-[550px] rotate-180"
             />
           </div>
         </div>
