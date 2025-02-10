@@ -1,5 +1,4 @@
 import logo from "../assets/images/logo.png";
-import { Datepicker } from "flowbite-react";
 import DemoComponent from "./DateRangePicker";
 
 const Calendy = () => {
