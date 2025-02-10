@@ -216,7 +216,7 @@ const Home = () => {
 
           {/* Find out how we can add more value to your team today! section */}
           <div className="w-full mt-16  bg-[#F4F9FF] py-10">
-            <div className="mt-16 max-w-[1000px] mb-10 mx-auto">
+            {/* <div className="mt-16 max-w-[1000px] mb-10 mx-auto">
               <h1 className="w-full text-center text-[#121212] font-medium text-xl sm:text-2xl md:text-3xl">
                 Find out how we can add more
                 <br /> value to your team today!
@@ -227,7 +227,7 @@ const Home = () => {
                 className="mt-10"
                 alt="State placement map"
               />
-            </div>
+            </div> */}
             <div className="mt-16 max-w-[1000px] mb-10 mx-auto">
               <Calendy />
             </div>

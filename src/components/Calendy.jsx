@@ -4,7 +4,7 @@ import DemoComponent from "./DateRangePicker";
 const Calendy = () => {
   return (
     <section className="rounded-3xl w-full border sm:border-[3px] bg-white border-[#E1E1E1] flex flex-col md:flex-row justify-start items-start divide-x-[1px] md:divide-x-[3px] divide-[#E1E1E1] overflow-hidden">
-      <div className="w-full h-[700px] md:w-[65%]">
+      <div className="w-full h-full sm:h-[700px] md:w-[65%]">
         <div className="md:border-b-[3px] sm:border-b border-[#E1E1E1] flex justify-center items-center w-full pt-5 pb-10">
           <img src={logo} alt="logo" className="rounded-full md:rounded-none" />{" "}
         </div>
@@ -33,9 +33,7 @@ const Calendy = () => {
                 />
               </svg>
 
-              <p className="font-semibold text-base md:text-lg lg:text-xl">
-                30 min
-              </p>
+              <p className="font-semibold text-base md:text-lg">30 min</p>
             </div>
             <div className="w-full flex justify-start items-center gap-3 text-[#898989]">
               <svg
@@ -60,9 +58,7 @@ const Calendy = () => {
                 />
               </svg>
 
-              <p className="font-semibold text-base md:text-lg lg:text-xl">
-                Phone call
-              </p>
+              <p className="font-semibold text-base md:text-lg">Phone call</p>
             </div>
           </div>
 
@@ -88,9 +84,9 @@ const Calendy = () => {
           Select a Date & Time
         </h2> */}
 
-        <div className="w-full relative">
-          <DemoComponent />
-        </div>
+        {/* <div className="w-full "> */}
+        <DemoComponent />
+        {/* </div> */}
       </div>
     </section>
   );

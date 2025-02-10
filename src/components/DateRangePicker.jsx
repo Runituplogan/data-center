@@ -16,9 +16,9 @@ const options = {
     todayBtn: "!hidden",
     clearBtn: "!hidden",
     icons: "!bg-transparent !text-black cursor-pointer",
-    text: "!text-[#1D1B20] !text-xl !mx-5 !my-3 !font-normal ease transition-all duration-300 hover:!text-[#38B4FE]",
+    text: "!text-[#1D1B20] !text-sm md:!text-xl !mx-5 !my-3 !font-normal ease transition-all duration-300 hover:!text-[#38B4FE]",
     disabledText:
-      "!text-[#8850DC] !text-xl !mx-5 !my-3 !opacity-40 hover:!bg-transparent !font-normal",
+      "!text-[#8850DC] !text-sm md:!text-xl !mx-5 !my-3 !opacity-40 hover:!bg-transparent !font-normal",
     input: "hidden",
     inputIcon: "!hidden !font-normal",
     selected: "!text-[#38B4FE] !bg-[#ECF5FC] !rounded-full !mx-5 !my-3",
@@ -56,9 +56,6 @@ const DemoComponent = () => {
         show={true}
         setShow={handleClose}
       />
-      <div className="">
-        <p className="font-medium">Time Zone</p>
-      </div>
     </div>
   );
 };

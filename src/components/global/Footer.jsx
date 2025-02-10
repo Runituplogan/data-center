@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="w-full border-t pt-5 flex justify-between items-center flex-wrap">
         <img src={logo} alt="Talent councel logo" />
 
-        <div className="flex flex-wrap justify-start items-center gap-4 md:gap-7 lg:gap-12 text-sm md:text-base">
+        <div className="flex flex-wrap justify-start items-center gap-4 md:gap-7 lg:gap-12 text-base lg:text-lg">
           <Link to={"/"} className="text-[#3A3A3A] hover:underline">
             Home
           </Link>

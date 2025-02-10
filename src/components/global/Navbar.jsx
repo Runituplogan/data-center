@@ -4,8 +4,8 @@ import hamburger from "../../assets/images/hamburger.svg";
 
 const Navbar = ({ onOpen }) => {
   return (
-    <nav className="fixed md:absolute top-2 md:top-0 right-0 left-0 p-2 lg:px-16 bg-white md:py-8 sm:px-3 md:px-8">
-      <div className="bg-[#FAFAFA] rounded-full w-full flex justify-between items-center gap-3 px-10 py-3 md:shadow-none shadow-md z-50">
+    <nav className="fixed md:absolute top-2 md:top-0 right-0 left-0 p-2 lg:px-16 bg-white md:py-8 sm:px-3 md:px-8 z-[90]">
+      <div className="bg-[#FAFAFA] rounded-full w-full flex justify-between items-center gap-3 px-10 py-3 md:shadow-none shadow-md">
         <div className="flex justify-start items-end">
           <img
             src={logo}
