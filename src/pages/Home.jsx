@@ -6,13 +6,12 @@ import { open_roles } from "../data";
 import blue_sun from "../assets/images/blue-sun.svg";
 import state_map from "../assets/images/state-map.png";
 import white_star from "../assets/images/white-star.png";
-import service_calendar from "../assets/images/service-calendar.png";
 import Footer from "../components/global/Footer";
 import SuccessfulPlacements from "../components/SuccessfulPlacements";
 import SendUsMessage from "../components/SendUsMessage";
 import Marquee from "../components/Marquee";
 import MobileNavbar from "../components/global/MobileNavbar";
-import Calendy from "../components/Calendy";
+import { InlineWidget } from "react-calendly";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +26,7 @@ const Home = () => {
 
       <section className="pt-36 md:pt-40 w-full px-4 md:px-0">
         <div className="w-full">
-          <div className="w-full max-w-[1000px] mx-auto">
+          <div className="w-full md:mt-7 max-w-[1000px] mx-auto">
             <HeroCard />
           </div>
 
@@ -74,7 +73,7 @@ const Home = () => {
               </h2>
 
               <div className="md:mt-12 mt-5 grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div className="space-y-5 text-sm sm:text-base md:text-lg">
+                <div className="space-y-5 text-sm sm:text-base">
                   <p className="md:text-left text-center">
                     We are a specialized team building and talent management
                     firm dedicated to solving the workforce challenges of the
@@ -102,7 +101,7 @@ const Home = () => {
                 <img
                   src={companyWorkersImg}
                   alt="company workers"
-                  className="rounded-md w-full"
+                  className="rounded-md"
                 />
               </div>
             </div>
@@ -116,7 +115,7 @@ const Home = () => {
                   Open Roles
                 </h2>
 
-                <div className="rounded-4xl mt-10 p-10 w-full relative radical-blue overflow-hidden px-10 md:px-20 lg:px-36">
+                <div className="rounded-4xl mt-10 p-10 w-full relative radical-blue overflow-hidden px-5 sm:px-10 md:px-20 lg:px-48 xl:px-60">
                   <img
                     src={blue_sun}
                     alt="radical eclipse"
@@ -126,22 +125,22 @@ const Home = () => {
                   <h1 className="w-full text-center font-medium text-white text-2xl md:text-3xl lg:text-4xl z-10 isolate">
                     Exciting Opportunities Await
                   </h1>
-                  <p className="text-center w-full text-white text-sm lg:text-base xl:text-lg mt-4 z-10 isolate pb-20">
+                  <p className="text-center w-full text-white text-base md:text-lg lg:text-xl mt-4 z-10 isolate pb-20">
                     Explore a variety of open positions across industries.
                     Whether you're a seasoned professional or a fresh talent,
                     there's something for you
                   </p>
                 </div>
 
-                <div className="relative w-full md:px-7 -my-20 z-20">
-                  <div className="flex justify-center items-center gap-5 md:gap-7 flex-wrap w-full md:px-10">
+                <div className="relative w-full -my-20 z-20">
+                  <div className="flex justify-center items-center gap-5 md:gap-7 flex-wrap w-full">
                     {open_roles.map((item, index) => (
                       <div
-                        className="rounded-lg bg-white shadow w-[250px] h-[160px]"
+                        className="rounded-lg bg-white shadow w-[150px] md:w-[300px] sm:w-[280px] h-[170px]"
                         key={index}
                       >
                         <div className="relative h-20 w-full overflow-hidden">
-                          <div className="absolute rounded-t-md inset-0 bg-black opacity-30"></div>
+                          <div className="absolute rounded-t-md inset-0 bg-black opacity-10"></div>
                           <img
                             src={item.imgSrc}
                             className="h-20 object-cover ease transition-all duration-200 hover:scale-105 rounded-t-lg w-full"
@@ -149,7 +148,7 @@ const Home = () => {
                           />
                         </div>
 
-                        <p className="text-center font-medium w-full py-5 px-10 inter sm:text-lg leading-6">
+                        <p className="text-center font-medium w-full py-5 sm:px-10 inter text-sm sm:text-lg md:text-xl leading-6">
                           {item.label}
                         </p>
                       </div>
@@ -169,11 +168,14 @@ const Home = () => {
                 className="absolute top-0 w-[940px] -z-0 sm:left-[50%] -translate-x-[45%]"
               />
 
-              <div className="w-full flex justify-start items-start gap-5 sm:gap-10 md:gap-36 md:flex-row flex-col pt-10 px-10 md:px-20">
-                <div className="flex justify-start items-center gap-7">
-                  <p className="w-full text-center font-medium text-white text-2xl md:text-3xl lg:text-4xl z-10">
+              <div className="w-full flex justify-start items-start gap-5 sm:gap-10 md:gap-36 md:flex-row flex-col pt-10 px-5 sm:px-10 md:px-20">
+                <div className="flex flex-col-reverse md:flex-row justify-center sm:justify-start items-center gap-2 sm:gap-7 w-full sm:w-fit">
+                  <p className="w-full text-center font-medium text-white text-2xl md:text-3xl lg:text-4xl z-10 md:block hidden">
                     Successful
                     <br /> Placements
+                  </p>
+                  <p className="w-full text-center font-medium text-white text-2xl md:text-3xl lg:text-4xl z-10 md:hidden">
+                    Successful Placements
                   </p>
                   <img
                     src={white_star}
@@ -182,7 +184,7 @@ const Home = () => {
                   />
                 </div>
 
-                <p className="text-white w-full md:w-[50%] text-lg md:text-xl lg:text-2xl z-10">
+                <p className="text-white w-full md:w-[50%] text-lg md:text-xl lg:text-2xl z-10 text-center md:text-left">
                   With countless successful placements, we connect the right
                   talent with the right roles. Trust us to help you achieve your
                   hiring goals effortlessly.
@@ -228,8 +230,9 @@ const Home = () => {
                 alt="State placement map"
               />
             </div> */}
-            <div className="mt-16 max-w-[1000px] mb-10 mx-auto">
-              <Calendy />
+            <div className="mt-16 max-w-[1000px] mx-auto">
+              {/* <Calendy /> */}
+              <InlineWidget url="https://calendly.com/talentcounsel/services" />
             </div>
           </div>
         </div>

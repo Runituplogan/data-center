@@ -85,7 +85,6 @@ const Calendy = () => {
         </h2> */}
 
         {/* <div className="w-full "> */}
-        <DemoComponent />
         {/* </div> */}
       </div>
     </section>

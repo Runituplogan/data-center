@@ -2,12 +2,12 @@ import city from "../assets/images/city.png";
 
 const HeroCard = () => {
   return (
-    <div className="radical-blue rounded-4xl pt-20 px-4 sm:px-10 md:px-56 relative">
-      <h1 className="w-full text-center font-semibold text-white text-xl md:text-3xl lg:text-4xl">
+    <div className="radical-blue rounded-4xl pt-20 px-4 sm:px-10 md:px-20 lg:px-28 relative">
+      <h1 className="w-full text-center font-semibold text-white text-2xl md:text-4xl lg:text-5xl leading-14">
         Connecting today's leading Talent to opportunities within the Datacenter
         Ecosystem
       </h1>
-      <p className="text-center w-full text-white font-medium pb-40 text-sm lg:text-base mt-3">
+      <p className="text-center w-full text-white font-medium pb-40 text-base lg:text-lg mt-3">
         Engineering | Design | Tech | Build | Manufacturing | IT | Software
       </p>
 
