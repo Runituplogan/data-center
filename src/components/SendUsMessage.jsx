@@ -4,6 +4,7 @@ import blue_mail from "../assets/images/blue-mail.svg";
 import blue_sun from "../assets/images/blue-sun.svg";
 import { Link } from "react-router-dom";
 import emailjs from "emailjs-com";
+import { toast } from "react-toastify";
 
 import linkedin from "../assets/images/linkedin.svg";
 import mail from "../assets/images/mail.svg";
@@ -41,6 +42,7 @@ const SendUsMessage = () => {
           setSuccess("Message sent successfully!");
           setLoading(false);
           setFormData({ name: "", email: "", phone: "", message: "" });
+          toast.success("Email sent successfully!");
         },
         (error) => {
           console.log("FAILED...", error);
