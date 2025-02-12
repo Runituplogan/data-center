@@ -14,22 +14,42 @@ const MobileNavbar = ({ open, onClose }) => {
         >
           X
         </button>
-        <Link to={"/"} className="text-[#3A3A3A] hover:underline">
+        <Link
+          onClick={onClose}
+          to="/#home"
+          className="text-[#3A3A3A] hover:underline"
+        >
           Home
         </Link>
-        <Link to={"/"} className="text-[#3A3A3A] hover:underline">
+        <Link
+          onClick={onClose}
+          to="/#about-us"
+          className="text-[#3A3A3A] hover:underline"
+        >
           About Us
         </Link>
-        <Link to={"/"} className="text-[#3A3A3A] hover:underline">
+        <Link
+          onClick={onClose}
+          to="/#open-roles"
+          className="text-[#3A3A3A] hover:underline"
+        >
           Open Roles
         </Link>
-        <Link to={"/"} className="text-[#3A3A3A] hover:underline">
+        <Link
+          onClick={onClose}
+          to="/#successful-placements"
+          className="text-[#3A3A3A] hover:underline"
+        >
           Successful Placements
         </Link>
 
-        <button className="rounded-full text-white py-3 px-4 w-full blue-gradient">
+        <Link
+          onClick={onClose}
+          to="/#send-us-message"
+          className="rounded-full text-white py-3 px-4 w-full blue-gradient text-center"
+        >
           Contact Us
-        </button>
+        </Link>
       </div>
     </nav>
   );

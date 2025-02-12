@@ -5,11 +5,12 @@ import radii from "../assets/images/radii.svg";
 
 const Marquee = ({ delay = 0.1, direction = "left" }) => {
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full overflow-hidden relative">
       <motion.div
         className="flex space-x-8 whitespace-nowrap"
-        initial={{ x: direction === "left" ? "100%" : "-100%" }}
-        animate={{ x: direction === "left" ? "-100%" : "100%" }}
+        animate={{
+          x: direction === "left" ? ["0%", "-100%"] : ["-100%", "0%"],
+        }}
         transition={{
           repeat: Infinity,
           duration: 35,

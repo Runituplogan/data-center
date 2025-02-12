@@ -17,26 +17,27 @@ const Navbar = ({ onOpen }) => {
           </p>
         </div>
         <div className="hidden md:flex justify-start items-center gap-4 md:gap-5 lg:gap-10 xl:gap-12 text-base md:text-lg">
-          <Link to={"/"} className="text-[#3A3A3A]">
+          <Link to="/#home" className="text-[#3A3A3A]">
             Home
           </Link>
-          <Link to={"/"} className="text-[#3A3A3A]">
+          <Link to="/#about-us" className="text-[#3A3A3A]">
             About Us
           </Link>
-          <Link to={"/"} className="text-[#3A3A3A]">
+          <Link to="/#open-roles" className="text-[#3A3A3A]">
             Open Roles
           </Link>
-          <Link to={"/"} className="text-[#3A3A3A]">
+          <Link to="/#successful-placements" className="text-[#3A3A3A]">
             Successful Placements
           </Link>
         </div>
 
-        <button
+        <Link
+          to="/#send-us-message"
           aria-label="Contact us"
           className="text-base sm:text-lg md:text-xl md:block hidden rounded-full py-3 px-3 lg:px-6 blue-gradient text-white ease transition-all duration-200 hover:opacity-80"
         >
           Contact Us
-        </button>
+        </Link>
 
         <button
           onClick={onOpen}

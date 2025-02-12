@@ -1,6 +1,6 @@
 const SuccessfulPlacements = () => {
   return (
-    <div className="w-full md:mt-2 mt-7">
+    <div id="successful-placements" className="w-full md:mt-2 mt-7">
       <h1 className="w-full text-center text-[#121212] font-medium text-xl md:text-3xl">
         Successful Placements
       </h1>
@@ -52,7 +52,7 @@ const SuccessfulPlacements = () => {
           </div>
           <p className="mt-5 text-base md:text-lg lg:text-xl">
             Over 1,000 successful hires in data center operations, construction,
-            and maintenance, for direct hire, contract and contract to hire
+            and maintenance, for direct hire, contract and contract to hire.
           </p>
         </div>
       </div>

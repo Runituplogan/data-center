@@ -1,7 +1,7 @@
 import Navbar from "../components/global/Navbar";
 import HeroCard from "../components/HeroCard";
 import companyWorkersImg from "../assets/images/company-workers.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { open_roles } from "../data";
 import blue_sun from "../assets/images/blue-sun.svg";
 import state_map from "../assets/images/state-map.png";
@@ -12,6 +12,7 @@ import SendUsMessage from "../components/SendUsMessage";
 import Marquee from "../components/Marquee";
 import MobileNavbar from "../components/global/MobileNavbar";
 import { InlineWidget } from "react-calendly";
+import { useLocation } from "react-router-dom";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,8 +20,19 @@ const Home = () => {
   const handleOpen = () => {
     setIsOpen(true);
   };
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const targetElement = document.getElementById(location.hash.substring(1));
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
   return (
-    <main className="relative w-full">
+    <main className="relative w-full" id="home">
       <Navbar onOpen={handleOpen} />
       <MobileNavbar onClose={() => setIsOpen(false)} open={isOpen} />
 
@@ -33,32 +45,32 @@ const Home = () => {
           <div className="w-full max-w-[1000px] mx-auto">
             <div className="w-full gap-2 sm:gap-7 grid grid-cols-4 lg:grid-cols-5 mt-10 rounded-md border-[#E2E2E2] border-y p-4">
               <div className="col-span-1 lg:col-span-2">
-                <p className="font-medium text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+                <p className="font-medium text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
                   Successful
                   <br /> Placements
                 </p>
               </div>
               <div>
-                <p className="font-semibold text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+                <p className="font-semibold text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
                   +50
                 </p>
-                <p className="text-xs sm:text-sm md:text-base text-[#121212] mt-2">
+                <p className="text-xs sm:text-sm md:text-base text-[#121212] mt-1 sm:mt-2">
                   Partnership
                 </p>
               </div>
               <div>
-                <p className="font-semibold text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+                <p className="font-semibold text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
                   +1000
                 </p>
-                <p className="text-xs sm:text-sm md:text-base text-[#121212] mt-2">
+                <p className="text-xs sm:text-sm md:text-base text-[#121212] mt-1 sm:mt-2">
                   Partnership
                 </p>
               </div>
               <div className="text-center">
-                <p className="font-semibold text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+                <p className="font-semibold text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
                   23
                 </p>
-                <p className="text-xs sm:text-sm md:text-base text-[#121212] mt-2">
+                <p className="text-xs sm:text-sm md:text-base text-[#121212] mt-1 sm:mt-2">
                   State Hired In
                 </p>
               </div>
@@ -66,14 +78,17 @@ const Home = () => {
           </div>
 
           {/* About us */}
-          <div className="w-full max-w-[1000px] mx-auto">
+          <div
+            id="about-us"
+            className="w-full max-w-[1000px] mx-auto lg:px-0 md:px-5 px-0"
+          >
             <div className="w-full mt-14 mb-10 text-[#121212] mx-auto">
-              <h2 className="w-full text-center font-medium text-xl md:text-3xl">
+              <h2 className="w-full text-center font-medium text-2xl md:text-3xl">
                 About Us
               </h2>
 
               <div className="md:mt-12 mt-5 grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div className="space-y-5 text-sm sm:text-base">
+                <div className="space-y-5 text-base">
                   <p className="md:text-left text-center">
                     We are a specialized team building and talent management
                     firm dedicated to solving the workforce challenges of the
@@ -98,17 +113,19 @@ const Home = () => {
                   </p>
                 </div>
 
-                <img
-                  src={companyWorkersImg}
-                  alt="company workers"
-                  className="rounded-md"
-                />
+                <div className="w-full h-full">
+                  <img
+                    src={companyWorkersImg}
+                    alt="company workers"
+                    className="rounded-md"
+                  />
+                </div>
               </div>
             </div>
           </div>
 
           {/* Open Roles */}
-          <div className="w-full">
+          <div id="open-roles" className="w-full">
             <div className="max-w-[1000px] w-full mx-auto">
               <div className="w-full mt-16 mb-10 text-[#121212]">
                 <h2 className="w-full text-center font-medium text-xl md:text-2xl lg:text-3xl">
@@ -128,7 +145,7 @@ const Home = () => {
                   <p className="text-center w-full text-white text-base md:text-lg lg:text-xl mt-4 z-10 isolate pb-20">
                     Explore a variety of open positions across industries.
                     Whether you're a seasoned professional or a fresh talent,
-                    there's something for you
+                    there's something for you.
                   </p>
                 </div>
 
@@ -136,7 +153,7 @@ const Home = () => {
                   <div className="flex justify-center items-center gap-5 md:gap-7 flex-wrap w-full">
                     {open_roles.map((item, index) => (
                       <div
-                        className="rounded-lg bg-white shadow w-[150px] md:w-[300px] sm:w-[280px] h-[170px]"
+                        className="rounded-lg bg-white shadow w-[150px] md:w-[250px] lg:w-[300px] sm:w-[280px] h-[170px]"
                         key={index}
                       >
                         <div className="relative h-20 w-full overflow-hidden">
@@ -161,7 +178,7 @@ const Home = () => {
 
           {/* Successful placements blue background */}
           <div className="w-full">
-            <div className="mt-10 py-10 w-full relative radical-blue overflow-hidden h-[500px]">
+            <div className="mt-10 py-10 w-full relative radical-blue overflow-hidden h-max md:h-[500px]">
               <img
                 src={blue_sun}
                 alt="radical eclipse"
@@ -230,7 +247,7 @@ const Home = () => {
                 alt="State placement map"
               />
             </div> */}
-            <div className="mt-16 max-w-[1000px] mx-auto">
+            <div className="max-w-[1000px] mx-auto overflow-y-hid">
               {/* <Calendy /> */}
               <InlineWidget url="https://calendly.com/talentcounsel/services" />
             </div>
