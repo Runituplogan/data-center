@@ -44,13 +44,11 @@ const Home = () => {
       <Navbar onOpen={handleOpen} />
       <MobileNavbar onClose={() => setIsOpen(false)} open={isOpen} />
 
-      <section className="pt-36 md:pt-40 w-full px-4 md:px-0">
+      <section className="pt- w-full">
         <div className="w-full">
-          <div className="w-full md:mt-7 max-w-[1000px] mx-auto">
-            <HeroCard />
-          </div>
+          <HeroCard />
 
-          <div className="w-full max-w-[1000px] mx-auto">
+          <div className="w-full mt-20 max-w-[1000px] mx-auto">
             <YDivMotion className="w-full gap-2 sm:gap-7 grid grid-cols-4 lg:grid-cols-5 mt-10 rounded-md border-[#E2E2E2] border-y p-4">
               <div className="col-span-1 lg:col-span-2">
                 <p className="font-semibold text-sm sm:text-xl md:text-2xl lg:text-3xl">

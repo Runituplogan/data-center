@@ -56,3 +56,26 @@ export const YDivMotion = ({
     </motion.div>
   );
 };
+
+export const ODivMotion = ({ children, delay = 0, className }) => {
+  const divRef = useRef(null);
+  const isTextInView = useInView(divRef, {
+    once: true,
+    margin: "-100px",
+  });
+  return (
+    <motion.div
+      ref={divRef}
+      initial={{ opacity: 0 }}
+      animate={isTextInView ? { opacity: 1 } : {}}
+      transition={{
+        duration: 0.9,
+        ease: "easeIn",
+        delay,
+      }}
+      className={`${className ? className : "w-full"} `}
+    >
+      {children}
+    </motion.div>
+  );
+};

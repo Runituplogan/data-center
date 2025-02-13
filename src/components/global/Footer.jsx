@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import linkedin from "../../assets/images/linkedin.svg";
 import mail from "../../assets/images/mail.svg";
+import { XDivMotion } from "../DivMotion";
 
 const Footer = () => {
   const date = new Date();
@@ -12,9 +13,12 @@ const Footer = () => {
           <Link to="/#home" className="pr-1 h-12 w-12 md:h-full md:w-full">
             <img src={logo} alt="Talent councel logo" />
           </Link>
-          <p className="font-bold text-sm md:text-lg pl-2 md:pl-4 border-l-2 h-8 md:h-12 self-center flex justify-center items-center">
-            Datacenters
-          </p>
+          <XDivMotion
+            initial={-30}
+            className="font-bold text-sm md:text-lg pl-2 md:pl-4 border-l-2 h-8 md:h-12 self-center flex justify-center items-center"
+          >
+            <p>Datacenters</p>
+          </XDivMotion>
         </div>
 
         <div className="flex sm:flex-row flex-col justify-start sm:items-center gap-4 md:gap-7 lg:gap-12 text-base lg:text-lg">
