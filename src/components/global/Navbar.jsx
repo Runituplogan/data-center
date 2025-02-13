@@ -1,20 +1,29 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import hamburger from "../../assets/images/hamburger.svg";
+import { motion, useInView } from "framer-motion";
 
 const Navbar = ({ onOpen }) => {
   return (
     <nav className="fixed md:absolute top-2 md:top-0 right-0 left-0 p-2 lg:px-16 bg-white md:py-8 sm:px-3 md:px-8 z-[90]">
-      <div className="bg-[#FAFAFA] rounded-full w-full flex justify-between items-center gap-3 px-10 py-3 md:shadow-none shadow-md">
-        <div className="flex justify-start items-end">
+      <div className="bg-[FAFAFA bg-white rounded-full w-full flex justify-between items-center gap-3 px-10 py-3 md:shadow-none shadow-md">
+        <div className="flex justify-start items-end overflow-hidden">
           <img
             src={logo}
             alt="Talent councel logo"
-            className="pr-1 h-12 w-12 md:h-full md:w-full"
+            className="pr-1 h-12 w-12 md:h-full md:w-full z-10"
           />
-          <p className="font-semibold text-sm md:text-lg pl-2 md:pl-4 border-l-2 h-8 md:h-12 self-center flex justify-center items-center">
-            Datacenters
-          </p>
+          <motion.div
+            initial={{ x: -30, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{
+              duration: 0.9,
+              ease: "easeIn",
+            }}
+            className="z-0 font-bold text-sm md:text-lg pl-2 md:pl-4 border-l-2 h-8 md:h-12 self-center flex justify-center items-center"
+          >
+            <p>Datacenters</p>
+          </motion.div>
         </div>
         <div className="hidden md:flex justify-start items-center gap-4 md:gap-5 lg:gap-10 xl:gap-12 text-base md:text-lg">
           <Link to="/#home" className="text-[#3A3A3A]">

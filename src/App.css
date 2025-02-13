@@ -2,7 +2,8 @@
 
 
 body {
-    font-family: 'SF Pro Display', sans-serif;
+    /* font-family: 'SF Pro Display', sans-serif; */
+    font-family: "Montserrat", serif;
     scroll-behavior: smooth;
 }
 

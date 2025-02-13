@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 import linkedin from "../assets/images/linkedin.svg";
 import mail from "../assets/images/mail.svg";
 import { useState } from "react";
+import { XDivMotion, YDivMotion } from "./DivMotion";
 
 const SendUsMessage = () => {
   const [formData, setFormData] = useState({
@@ -56,81 +57,95 @@ const SendUsMessage = () => {
     <section className="w-full py-20 bg-white" id="send-us-message">
       <div className="mx-auto w-full max-w-[1000px]">
         <div className="w-full max-w-lg mx-auto px-0 lg:px-12">
-          <h1 className="w-full text-center text-[#121212] font-medium text-xl md:text-2xl lg:text-3xl xl:text-4xl">
-            Send us a message
-          </h1>
+          <YDivMotion delay={0.5}>
+            <h1 className="w-full text-center text-[#121212] font-medium text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+              Send us a message
+            </h1>
+          </YDivMotion>
 
-          <p className="w-full text-center text-[#121212] mt-5 text-base md:text-lg">
-            We’d love to hear from you. Whether you’re looking to hire or
-            seeking your next opportunity, reach out today.
-          </p>
+          <YDivMotion delay={0.9}>
+            <p className="w-full text-center text-[#121212] mt-5 text-base md:text-lg">
+              We’d love to hear from you. Whether you’re looking to hire or
+              seeking your next opportunity, reach out today.
+            </p>
+          </YDivMotion>
         </div>
 
         <div className="flex md:flex-row flex-col justify-between items-start gap-10 mt-14 xl:px-0 md:px-5">
-          <form onSubmit={sendEmail} className="md:w-[50%] lg:w-[40%] w-full">
-            <div className="mb-5">
-              <label>Name *</label>
-              <input
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Enter name here..."
-                className="w-full mt-2 border-[#3A3A3A] rounded-full py-2.5 pl-5 border outline-none active:ring-1 focus:border-blue-400 active:ring-blue-400 focus:ring-1 focus:ring-blue-400 ease transition-all duration-300"
-              />
-            </div>
-            <div className="mb-5">
-              <label>Email *</label>
-              <input
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                type="email"
-                placeholder="Enter email address here..."
-                className="w-full mt-2 border-[#3A3A3A] rounded-full py-2.5 pl-5 border outline-none active:ring-1 focus:border-blue-400 active:ring-blue-400 focus:ring-1 focus:ring-blue-400 ease transition-all duration-300"
-              />
-            </div>
-            <div className="mb-5">
-              <label>Phone Number *</label>
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="Enter phone number here..."
-                className="w-full mt-2 border-[#3A3A3A] rounded-full py-2.5 pl-5 border outline-none active:ring-1 focus:border-blue-400 active:ring-blue-400 focus:ring-1 focus:ring-blue-400 ease transition-all duration-300"
-              />
-            </div>
-            <div className="mb-5">
-              <label>Message *</label>
-              <textarea
-                rows={4}
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Enter message here..."
-                className="w-full mt-2 rounded-xl border-[#3A3A3A] py-2.5 pl-5 border outline-none active:ring-1 focus:border-blue-400 active:ring-blue-400 focus:ring-1 focus:ring-blue-400 ease transition-all duration-300"
-              />
-            </div>
+          <XDivMotion
+            initial={-30}
+            delay={0.8}
+            className="md:w-[50%] lg:w-[40%] w-full"
+          >
+            <form onSubmit={sendEmail}>
+              <div className="mb-5">
+                <label>Name *</label>
+                <input
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Enter name here..."
+                  className="w-full mt-2 border-[#3A3A3A] rounded-full py-2.5 pl-5 border outline-none active:ring-1 focus:border-blue-400 active:ring-blue-400 focus:ring-1 focus:ring-blue-400 ease transition-all duration-300"
+                />
+              </div>
+              <div className="mb-5">
+                <label>Email *</label>
+                <input
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  type="email"
+                  placeholder="Enter email address here..."
+                  className="w-full mt-2 border-[#3A3A3A] rounded-full py-2.5 pl-5 border outline-none active:ring-1 focus:border-blue-400 active:ring-blue-400 focus:ring-1 focus:ring-blue-400 ease transition-all duration-300"
+                />
+              </div>
+              <div className="mb-5">
+                <label>Phone Number *</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="Enter phone number here..."
+                  className="w-full mt-2 border-[#3A3A3A] rounded-full py-2.5 pl-5 border outline-none active:ring-1 focus:border-blue-400 active:ring-blue-400 focus:ring-1 focus:ring-blue-400 ease transition-all duration-300"
+                />
+              </div>
+              <div className="mb-5">
+                <label>Message *</label>
+                <textarea
+                  rows={4}
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Enter message here..."
+                  className="w-full mt-2 rounded-xl border-[#3A3A3A] py-2.5 pl-5 border outline-none active:ring-1 focus:border-blue-400 active:ring-blue-400 focus:ring-1 focus:ring-blue-400 ease transition-all duration-300"
+                />
+              </div>
 
-            {/* <div className="g-recaptcha" data-sitekey="your_site_key"></div> */}
+              {/* <div className="g-recaptcha" data-sitekey="your_site_key"></div> */}
 
-            <button
-              type="submit"
-              disabled={loading}
-              aria-label="Send a message"
-              className="disabled:opacity-45 sm:mt-2 rounded-full text-white px-10 py-3 blue-gradient ease transition-all duration-200 hover:opacity-60 cursor-pointer"
-            >
-              Send a message
-            </button>
-          </form>
+              <button
+                type="submit"
+                disabled={loading}
+                aria-label="Send a message"
+                className="disabled:opacity-45 sm:mt-2 rounded-full text-white px-10 py-3 blue-gradient ease transition-all duration-200 hover:opacity-60 cursor-pointer"
+              >
+                Send a message
+              </button>
+            </form>
+          </XDivMotion>
 
-          <div className="sm:w-[350px] w-full rounded-xl blue-gradient px-4 py-7 relative overflow-hidden">
+          <XDivMotion
+            initial={30}
+            delay={1}
+            className="sm:w-[350px] w-full rounded-xl blue-gradient px-4 py-7 relative overflow-hidden"
+          >
             <h2 className="w-full text-center font-medium text-xl text-white">
               Let's Get in Touch
             </h2>
 
             <div className="w-full space-y-3 mt-6 z-10">
-              <div className="w-full text-white rounded-xl border border-[#3FC5FF] bg-[#3CACDC6E] p-4 flex justify-start items-center gap-3">
+              <div className="w-full text-white rounded-xl border border-[#3FC5FF] bg-[#3CACDC6E] p-4 flex justify-start items-center gap-3 relative z-10">
                 <img src={phone} alt="phone" />
                 <div className="text-sm md:text-base">
                   <p className="font-medium">Phone</p>
@@ -138,11 +153,11 @@ const SendUsMessage = () => {
                 </div>
               </div>
 
-              <div className="w-full text-white rounded-xl border border-[#3FC5FF] bg-[#3CACDC6E] p-4 flex justify-start items-center gap-3">
+              <div className="w-full text-white rounded-xl border border-[#3FC5FF] bg-[#3CACDC6E] p-4 flex justify-start items-center gap-3 relative z-10">
                 <img src={blue_mail} alt="email" />
                 <div className="text-sm md:text-base">
                   <p className="font-medium">Email</p>
-                  <p className="text-sm">charles@thetalentcounsel.com</p>
+                  <p className="text-sm">info@thetalentcounsel.com</p>
                 </div>
               </div>
               <div className="w-full text-white rounded-xl border border-[#3FC5FF] bg-[#3CACDC6E] p-4 flex justify-start items-center gap-3 relative z-10">
@@ -182,7 +197,7 @@ const SendUsMessage = () => {
               alt="radical eclipse"
               className="absolute -bottom-24 scale-200 right-0 left-0 w-full h-[550px] rotate-180"
             />
-          </div>
+          </XDivMotion>
         </div>
       </div>
     </section>

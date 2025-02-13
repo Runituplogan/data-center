@@ -1,7 +1,7 @@
 import Navbar from "../components/global/Navbar";
 import HeroCard from "../components/HeroCard";
-import companyWorkersImg from "../assets/images/company-workers.png";
-import { useEffect, useState } from "react";
+import companyWorkersImg from "../assets/images/about.jpg";
+import { useEffect, useRef, useState } from "react";
 import { open_roles } from "../data";
 import blue_sun from "../assets/images/blue-sun.svg";
 import state_map from "../assets/images/state-map.png";
@@ -12,10 +12,18 @@ import SendUsMessage from "../components/SendUsMessage";
 import Marquee from "../components/Marquee";
 import MobileNavbar from "../components/global/MobileNavbar";
 import { InlineWidget } from "react-calendly";
+import { motion, useInView } from "framer-motion";
 import { useLocation } from "react-router-dom";
+import { XDivMotion, YDivMotion } from "../components/DivMotion";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const textRef = useRef(null);
+  const openRoleTextRef = useRef(null);
+  const isTextInView = useInView(textRef, { once: true, margin: "-100px" });
+
+  const divRef = useRef(null);
+  const isDivInView = useInView(divRef, { once: true, margin: "-100px" });
 
   const handleOpen = () => {
     setIsOpen(true);
@@ -43,15 +51,15 @@ const Home = () => {
           </div>
 
           <div className="w-full max-w-[1000px] mx-auto">
-            <div className="w-full gap-2 sm:gap-7 grid grid-cols-4 lg:grid-cols-5 mt-10 rounded-md border-[#E2E2E2] border-y p-4">
+            <YDivMotion className="w-full gap-2 sm:gap-7 grid grid-cols-4 lg:grid-cols-5 mt-10 rounded-md border-[#E2E2E2] border-y p-4">
               <div className="col-span-1 lg:col-span-2">
-                <p className="font-medium text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+                <p className="font-semibold text-sm sm:text-xl md:text-2xl lg:text-3xl">
                   Successful
                   <br /> Placements
                 </p>
               </div>
               <div>
-                <p className="font-semibold text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+                <p className="font-bold text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
                   +50
                 </p>
                 <p className="text-xs sm:text-sm md:text-base text-[#121212] mt-1 sm:mt-2">
@@ -59,36 +67,47 @@ const Home = () => {
                 </p>
               </div>
               <div>
-                <p className="font-semibold text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+                <p className="font-bold text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
                   +1000
                 </p>
                 <p className="text-xs sm:text-sm md:text-base text-[#121212] mt-1 sm:mt-2">
-                  Partnership
+                  Placements
                 </p>
               </div>
               <div className="text-center">
-                <p className="font-semibold text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+                <p className="font-bold text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
                   23
                 </p>
                 <p className="text-xs sm:text-sm md:text-base text-[#121212] mt-1 sm:mt-2">
-                  State Hired In
+                  States Hired In
                 </p>
               </div>
-            </div>
+            </YDivMotion>
           </div>
 
           {/* About us */}
           <div
             id="about-us"
-            className="w-full max-w-[1000px] mx-auto lg:px-0 md:px-5 px-0"
+            className="w-full max-w-[1300px] mx-auto lg:px-0 md:px-5 px-0"
           >
-            <div className="w-full mt-14 mb-10 text-[#121212] mx-auto">
-              <h2 className="w-full text-center font-medium text-2xl md:text-3xl">
-                About Us
-              </h2>
+            <div className="w-full pt-14 mb-10 text-[#121212] mx-auto">
+              <YDivMotion>
+                <h2 className="w-full text-center font-medium text-2xl md:text-3xl">
+                  About Us
+                </h2>
+              </YDivMotion>
 
-              <div className="md:mt-12 mt-5 grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div className="space-y-5 text-base">
+              <div className="md:mt-12 mt-5 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 lg:gap-20 xl:gap-36">
+                <motion.div
+                  ref={textRef}
+                  initial={{ x: -30, opacity: 0 }}
+                  animate={isTextInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{
+                    duration: 0.9,
+                    ease: "easeIn",
+                  }}
+                  className="space-y-5 text-base"
+                >
                   <p className="md:text-left text-center">
                     We are a specialized team building and talent management
                     firm dedicated to solving the workforce challenges of the
@@ -111,15 +130,25 @@ const Home = () => {
                     and sustain the infrastructure that keeps data centers
                     running
                   </p>
-                </div>
+                </motion.div>
 
-                <div className="w-full h-full">
+                <motion.div
+                  ref={divRef}
+                  initial={{ x: 30, opacity: 0 }}
+                  animate={isDivInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{
+                    duration: 0.6,
+                    ease: "easeOut",
+                    delay: 0.6,
+                  }}
+                  className="w-full flex flex-col justify-start items-end relative"
+                >
                   <img
                     src={companyWorkersImg}
                     alt="company workers"
                     className="rounded-md"
                   />
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
@@ -127,12 +156,17 @@ const Home = () => {
           {/* Open Roles */}
           <div id="open-roles" className="w-full">
             <div className="max-w-[1000px] w-full mx-auto">
-              <div className="w-full mt-16 mb-10 text-[#121212]">
-                <h2 className="w-full text-center font-medium text-xl md:text-2xl lg:text-3xl">
-                  Open Roles
-                </h2>
+              <div className="w-full pt-16 pb-10 text-[#121212]">
+                <YDivMotion>
+                  <h2 className="w-full text-center font-medium text-xl md:text-2xl lg:text-3xl">
+                    Open Roles
+                  </h2>
+                </YDivMotion>
 
-                <div className="rounded-4xl mt-10 p-10 w-full relative radical-blue overflow-hidden px-5 sm:px-10 md:px-20 lg:px-48 xl:px-60">
+                <YDivMotion
+                  delay={0.3}
+                  className="rounded-4xl mt-10 p-10 w-full relative radical-blue overflow-hidden px-5 sm:px-10 md:px-20 lg:px-48 xl:px-60"
+                >
                   <img
                     src={blue_sun}
                     alt="radical eclipse"
@@ -147,28 +181,29 @@ const Home = () => {
                     Whether you're a seasoned professional or a fresh talent,
                     there's something for you.
                   </p>
-                </div>
+                </YDivMotion>
 
                 <div className="relative w-full -my-20 z-20">
                   <div className="flex justify-center items-center gap-5 md:gap-7 flex-wrap w-full">
                     {open_roles.map((item, index) => (
-                      <div
-                        className="rounded-lg bg-white shadow w-[150px] md:w-[250px] lg:w-[300px] sm:w-[280px] h-[170px]"
+                      <YDivMotion
+                        delay={0.1 * index}
+                        className="rounded-lg bg-white shadow w-[150px] md:w-[250px] lg:w-[300px] sm:w-[280px] h-[170px] group"
                         key={index}
                       >
                         <div className="relative h-20 w-full overflow-hidden">
                           <div className="absolute rounded-t-md inset-0 bg-black opacity-10"></div>
                           <img
                             src={item.imgSrc}
-                            className="h-20 object-cover ease transition-all duration-200 hover:scale-105 rounded-t-lg w-full"
+                            className="h-20 object-cover ease transition-all duration-200 hover:scale-105 rounded-t-lg w-full group-hover:scale-105 "
                             alt={item.label}
                           />
                         </div>
 
-                        <p className="text-center font-medium w-full py-5 sm:px-10 inter text-sm sm:text-lg md:text-xl leading-6">
+                        <p className="text-center font-medium w-full py-5 sm:px-10 text-sm sm:text-lg md:text-xl leading-6">
                           {item.label}
                         </p>
-                      </div>
+                      </YDivMotion>
                     ))}
                   </div>
                 </div>
@@ -218,18 +253,22 @@ const Home = () => {
 
           {/* Successful placemnets grid */}
           <div className="w-full">
-            <div className="w-full max-w-[1000px] mx-auto p-5 md:p-10 lg:py-20">
+            <div className="w-full max-w-[1300px] mx-auto p-5 md:p-10 lg:py-20">
               <SuccessfulPlacements />
             </div>
           </div>
           {/* Sate placement section */}
           <div className="w-full">
             <div className="mt-16 max-w-[1200px] mb-10 bg-white flex flex-col items-center mx-auto">
-              <h1 className="w-full text-center text-[#121212] font-medium text-xl sm:text-2xl md:text-3xl">
-                States With Placements
-              </h1>
+              <YDivMotion>
+                <h1 className="w-full text-center text-[#121212] font-medium text-xl sm:text-2xl md:text-3xl">
+                  States With Placements
+                </h1>
+              </YDivMotion>
 
-              <img src={state_map} alt="State placement map" />
+              <YDivMotion delay={0.5}>
+                <img src={state_map} alt="State placement map" />
+              </YDivMotion>
             </div>
           </div>
 

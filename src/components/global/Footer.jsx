@@ -12,7 +12,7 @@ const Footer = () => {
           <Link to="/#home" className="pr-1 h-12 w-12 md:h-full md:w-full">
             <img src={logo} alt="Talent councel logo" />
           </Link>
-          <p className="font-semibold text-sm md:text-lg pl-2 md:pl-4 border-l-2 h-8 md:h-12 self-center flex justify-center items-center">
+          <p className="font-bold text-sm md:text-lg pl-2 md:pl-4 border-l-2 h-8 md:h-12 self-center flex justify-center items-center">
             Datacenters
           </p>
         </div>

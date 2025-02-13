@@ -10,10 +10,10 @@ const Calendy = () => {
         </div>
 
         <div className="h-full overflow-y-auto p-4 lg:p-7">
-          <h1 className="font-semibold text-base md:text-xl lg:text-2xl text-[#898989] w-full text-center sm:text-left">
+          <h1 className="font-bold text-base md:text-xl lg:text-2xl text-[#898989] w-full text-center sm:text-left">
             DataCenters
           </h1>
-          <h2 className="font-semibold text-lg md:text-xl lg:text-2xl text-[#0C213A] mt-2 w-full text-center sm:text-left">
+          <h2 className="font-bold text-lg md:text-xl lg:text-2xl text-[#0C213A] mt-2 w-full text-center sm:text-left">
             Service Discussion
           </h2>
 
@@ -33,7 +33,7 @@ const Calendy = () => {
                 />
               </svg>
 
-              <p className="font-semibold text-base md:text-lg">30 min</p>
+              <p className="font-bold text-base md:text-lg">30 min</p>
             </div>
             <div className="w-full flex justify-start items-center gap-3 text-[#898989]">
               <svg
@@ -58,7 +58,7 @@ const Calendy = () => {
                 />
               </svg>
 
-              <p className="font-semibold text-base md:text-lg">Phone call</p>
+              <p className="font-bold text-base md:text-lg">Phone call</p>
             </div>
           </div>
 
@@ -80,7 +80,7 @@ const Calendy = () => {
       </div>
 
       <div className="w-full border-t-[1px] md:border-t-2 border-[#E1E1E1] p-4 md:p-6 h-[700px] md:w-[45%] flex-auto flex flex-col">
-        {/* <h2 className="font-semibold text-lg md:text-xl lg:text-2xl text-[#0C213A] mt-2 w-full text-center sm:text-left">
+        {/* <h2 className="font-bold text-lg md:text-xl lg:text-2xl text-[#0C213A] mt-2 w-full text-center sm:text-left">
           Select a Date & Time
         </h2> */}
 
