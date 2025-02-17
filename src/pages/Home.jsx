@@ -15,11 +15,12 @@ import { InlineWidget } from "react-calendly";
 import { motion, useInView } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import { XDivMotion, YDivMotion } from "../components/DivMotion";
+import Counter from "../components/Counter";
+import OurValues from "../components/OurValues";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
   const textRef = useRef(null);
-  const openRoleTextRef = useRef(null);
   const isTextInView = useInView(textRef, { once: true, margin: "-100px" });
 
   const divRef = useRef(null);
@@ -49,32 +50,32 @@ const Home = () => {
           <HeroCard />
 
           <div className="w-full mt-20 max-w-[1000px] mx-auto">
-            <YDivMotion className="w-full gap-2 sm:gap-7 grid grid-cols-4 lg:grid-cols-5 mt-10 rounded-md border-[#E2E2E2] border-y p-4">
-              <div className="col-span-1 lg:col-span-2">
-                <p className="font-semibold text-sm sm:text-xl md:text-2xl lg:text-3xl">
+            <YDivMotion className="w-full gap-2 flex justify-between items-center mt-10 rounded-md border-[#E2E2E2] border-y p-7">
+              {/* <div className="col-span-1 lg:col-span-2">
+                <p className="font-semibold text-xl md:text-2xl lg:text-3xl">
                   Successful
                   <br /> Placements
                 </p>
-              </div>
+              </div> */}
               <div>
-                <p className="font-bold text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
-                  +50
+                <p className="font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
+                  +<Counter speed={20} target={50} />
                 </p>
                 <p className="text-xs sm:text-sm md:text-base text-[#121212] mt-1 sm:mt-2">
-                  Partnership
+                  Partnerships
                 </p>
               </div>
               <div>
-                <p className="font-bold text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
-                  +1000
+                <p className="font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
+                  +<Counter target={1000} speed={0} />
                 </p>
-                <p className="text-xs sm:text-sm md:text-base text-[#121212] mt-1 sm:mt-2">
+                <p className="text-xs sm:text-sm md:text-base text-[#121212] mt-1 sm:mt-2 text-center">
                   Placements
                 </p>
               </div>
               <div className="text-center">
-                <p className="font-bold text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
-                  23
+                <p className="font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
+                  <Counter target={23} />
                 </p>
                 <p className="text-xs sm:text-sm md:text-base text-[#121212] mt-1 sm:mt-2">
                   States Hired In
@@ -86,49 +87,68 @@ const Home = () => {
           {/* About us */}
           <div
             id="about-us"
-            className="w-full max-w-[1300px] mx-auto lg:px-0 md:px-5 px-0"
+            className="w-full max-w-[1300px] mx-auto xl:px-0 lg:px-7 md:px-5 px-0 pb-20"
           >
             <div className="w-full pt-14 mb-10 text-[#121212] mx-auto">
-              <YDivMotion>
-                <h2 className="w-full text-center font-medium text-2xl md:text-3xl">
-                  About Us
-                </h2>
-              </YDivMotion>
+              <div className="relative px-2 w-max">
+                <div className="absolute right-0 bg-[#FFFF00] left-0 -bottom-2 h-5"></div>
+                <YDivMotion>
+                  <h2 className="uppercase w-full flex items-center gap-3 text-center md:text-left text-xl relative z-10 text-[#2a2a2a]">
+                    About us.
+                  </h2>
+                </YDivMotion>
+              </div>
 
-              <div className="md:mt-12 mt-5 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 lg:gap-20 xl:gap-36">
-                <motion.div
-                  ref={textRef}
-                  initial={{ x: -30, opacity: 0 }}
-                  animate={isTextInView ? { x: 0, opacity: 1 } : {}}
-                  transition={{
-                    duration: 0.9,
-                    ease: "easeIn",
-                  }}
-                  className="space-y-5 text-base"
-                >
-                  <p className="md:text-left text-center">
-                    We are a specialized team building and talent management
-                    firm dedicated to solving the workforce challenges of the
-                    data center industry.
-                  </p>
-                  <p className="md:text-left text-center">
-                    We connect high-level professionals with hyperscale,
-                    colocation, and enterprise data centers, as well as
-                    engineering, construction, HVAC, cabling, logistics, power,
-                    and mission-critical infrastructure sectors that support
-                    them.
-                  </p>
-                  <p className="md:text-left text-center">
-                    Our focus is exclusively on recruitment for mission-critical
-                    environments, specializing in data center operations,
-                    expansion, and maintenance.
-                  </p>
-                  <p className="md:text-left text-center">
-                    We provide skilled professionals who design, build, operate,
-                    and sustain the infrastructure that keeps data centers
-                    running
-                  </p>
-                </motion.div>
+              <div className="md:mt-12 lg:mt-20 xl:mt-28 mt-10 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 lg:gap-20 xl:gap-36 text-[#2a2a2a]">
+                <div className="space-y-5 text-base">
+                  <YDivMotion className="w-full">
+                    <h1 className="md:text-left text-center font-semibold text-xl sm:text-2xl gilroy-bold w-full">
+                      We are a specialized team building and talent management
+                      firm dedicated to
+                      <span className="app-bg relative leading-[1 p-0.5 bg-[]">
+                        solving the workforce challenges of the data center
+                        industry.
+                      </span>
+                      {/* <div className="">
+                        <span className="px-0.5 inline-flex w-fit relative overflow-hidden text-white">
+                          <span className="relative z-10">solving the</span>
+                          <span className="animate-scale-in absolute"></span>
+                        </span>
+                        <span className="px-0.5 inline-flex relative overflow-hidden text-white w-fit">
+                          <span className="relative z-10">
+                            workforce challenges of the data center
+                          </span>
+                          <span className="animate-scale-in absolute"></span>
+                        </span>
+                      </div> */}
+                    </h1>
+                  </YDivMotion>
+
+                  <YDivMotion
+                    delay={0.8}
+                    className="w-full space-y-4 text-[#545454] gilroy text-base md:text-lg"
+                  >
+                    <p>
+                      We connect high-level professionals with hyperscale,
+                      colocation, and enterprise data centers, as well as
+                      engineering, construction, HVAC, cabling, logistics,
+                      power, and mission-critical infrastructure sectors that
+                      support them.
+                    </p>
+
+                    <p>
+                      Our focus is exclusively on recruitment for
+                      mission-critical environments, specializing in data center
+                      operations, expansion, and maintenance.
+                    </p>
+
+                    <p>
+                      We provide skilled professionals who design, build,
+                      operate, and sustain the infrastructure that keeps data
+                      centers running
+                    </p>
+                  </YDivMotion>
+                </div>
 
                 <motion.div
                   ref={divRef}
@@ -151,17 +171,23 @@ const Home = () => {
             </div>
           </div>
 
+          <OurValues />
+
           {/* Open Roles */}
           <div id="open-roles" className="w-full">
             <div className="max-w-[1000px] w-full mx-auto">
-              <div className="w-full pt-16 pb-10 text-[#121212]">
+              <div className="w-full px-2 md:px-0 pt-16 pb-10 text-[#121212]">
                 <YDivMotion>
-                  <h2 className="w-full text-center font-medium text-xl md:text-2xl lg:text-3xl">
-                    Open Roles
+                  <h2 className="w-full text-center font-bold text-xl md:text-2xl lg:text-3xl flex justify-start items-center gap-1">
+                    In-Demand
+                    <div className="px-2 inline-block relative overflow-hidden text-white">
+                      <span className="relative z-10">Roles We Support:</span>
+                      <span className="animate-scale-in absolute"></span>
+                    </div>
                   </h2>
                 </YDivMotion>
 
-                <YDivMotion
+                {/* <YDivMotion
                   delay={0.3}
                   className="rounded-4xl mt-10 p-10 w-full relative radical-blue overflow-hidden px-5 sm:px-10 md:px-20 lg:px-48 xl:px-60"
                 >
@@ -179,9 +205,9 @@ const Home = () => {
                     Whether you're a seasoned professional or a fresh talent,
                     there's something for you.
                   </p>
-                </YDivMotion>
+                </YDivMotion> */}
 
-                <div className="relative w-full -my-20 z-20">
+                <div className="relative w-full mt-16 md:mt-20 z-20">
                   <div className="flex justify-center items-center gap-5 md:gap-7 flex-wrap w-full">
                     {open_roles.map((item, index) => (
                       <YDivMotion
@@ -198,7 +224,7 @@ const Home = () => {
                           />
                         </div>
 
-                        <p className="text-center font-medium w-full py-5 sm:px-10 text-sm sm:text-lg md:text-xl leading-6">
+                        <p className="text-center font-semibold md:font-medium w-full py-5 sm:px-10 text-sm sm:text-lg md:text-xl leading-6">
                           {item.label}
                         </p>
                       </YDivMotion>
@@ -259,8 +285,12 @@ const Home = () => {
           <div className="w-full">
             <div className="mt-16 max-w-[1200px] mb-10 bg-white flex flex-col items-center mx-auto">
               <YDivMotion>
-                <h1 className="w-full text-center text-[#121212] font-medium text-xl sm:text-2xl md:text-3xl">
-                  States With Placements
+                <h1 className="w-full text-center text-[#121212] font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl flex justify-center items-center gap-1">
+                  <div className="px-2 inline-block relative overflow-hidden text-white">
+                    <span className="relative z-10">Active Partnerships</span>
+                    <span className="animate-scale-in absolute"></span>
+                  </div>
+                  across the USA
                 </h1>
               </YDivMotion>
 
@@ -285,7 +315,6 @@ const Home = () => {
               />
             </div> */}
             <div className="max-w-[1000px] mx-auto overflow-y-hid">
-              {/* <Calendy /> */}
               <InlineWidget url="https://calendly.com/talentcounsel/services" />
             </div>
           </div>

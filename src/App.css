@@ -1,10 +1,63 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: "gilroy";
+    src: url("../src/assets/fonts/gilroy/Gilroy-Regular.ttf") format("truetype"),
+        url("../src/assets/fonts/gilroy/Gilroy-Medium.ttf") format("truetype");
+    font-weight: 400 500;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "gilroy-medium";
+    src: url("../src/assets/fonts/gilroy/Gilroy-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "gilroy-bold";
+    src: url("../src/assets/fonts/gilroy/Gilroy-Bold.ttf") format("truetype"),
+        url("../src/assets/fonts/gilroy/Gilroy-Black.ttf") format("truetype");
+    font-weight: 700 800;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "gilroy-semibold";
+    src: url("../src/assets/fonts/gilroy/Gilroy-SemiBold.ttf") format("truetype"),
+        url("../src/assets/fonts/gilroy/Gilroy-Bold.ttf") format("truetype");
+    font-weight: 600 700;
+    font-display: swap;
+    font-style: normal;
+}
 
 body {
-    /* font-family: 'SF Pro Display', sans-serif; */
     font-family: "Montserrat", serif;
     scroll-behavior: smooth;
+}
+
+.gilroy {
+    font-family: "gilroy", serif;
+    font-weight: 400;
+}
+
+.gilroy-medium {
+    font-family: "gilroy-medium", serif;
+    font-weight: 500;
+}
+
+.gilroy-semibold {
+    font-family: "gilroy-semibold", serif;
+    font-weight: 600;
+}
+
+.gilroy-bold {
+    font-family: "gilroy-bold", serif;
+    font-weight: 700;
 }
 
 .inter {
@@ -13,11 +66,22 @@ body {
 
 
 .animate-scale-in {
-    animation: scale-fade-in 0.5s;
-    animation-delay: 1s;
+    animation: scale-fade-in 1.5s;
+    animation-delay: 0.5s;
     background-color: #0da1f7;
     inset: 0;
+}
 
+.animate-scale-in-2 {
+    animation: scale-fade-in 0.5s;
+    animation-delay: 1.5s;
+    background-color: #0da1f7;
+    top: 10%;
+    bottom: 10%;
+}
+
+.app-bg {
+    background: linear-gradient(180deg, rgba(211, 255, 0, 0) 0%, rgba(211, 255, 0, 0) 22.9%, #FFFF00 22%, #FFFF00 50%, #FFFF00 85%, rgba(211, 255, 0, 0) 85.1%, rgba(211, 255, 0, 0) 100%);
 }
 
 @keyframes scale-fade-in {
@@ -28,7 +92,6 @@ body {
         bottom: 10;
         right: 50%;
         left: 50%;
-
     }
 
     20% {

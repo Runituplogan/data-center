@@ -1,6 +1,5 @@
 import phone from "../assets/images/phone.svg";
 import address from "../assets/images/address.svg";
-import blue_mail from "../assets/images/blue-mail.svg";
 import blue_sun from "../assets/images/blue-sun.svg";
 import { Link } from "react-router-dom";
 import emailjs from "emailjs-com";
@@ -54,19 +53,25 @@ const SendUsMessage = () => {
   };
 
   return (
-    <section className="w-full py-20 bg-white" id="send-us-message">
+    <section
+      className="w-full py-20 bg-white px-4 md:px-0"
+      id="send-us-message"
+    >
       <div className="mx-auto w-full max-w-[1000px]">
-        <div className="w-full max-w-lg mx-auto px-0 lg:px-12">
+        <div className="w-full max-w-lg mx-auto px-2">
           <YDivMotion delay={0.5}>
-            <h1 className="w-full text-center text-[#121212] font-medium text-xl md:text-2xl lg:text-3xl xl:text-4xl">
-              Send us a message
+            <h1 className="w-full text-center text-[#121212] font-semibold text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
+              <div className="px-2 inline-block relative overflow-hidden text-white">
+                <span className="relative z-10">Send us a message</span>
+                <span className="animate-scale-in absolute"></span>
+              </div>
             </h1>
           </YDivMotion>
 
           <YDivMotion delay={0.9}>
             <p className="w-full text-center text-[#121212] mt-5 text-base md:text-lg">
-              We’d love to hear from you. Whether you’re looking to hire or
-              seeking your next opportunity, reach out today.
+              Whether you’re hiring or looking for your next opportunity, reach
+              out today!
             </p>
           </YDivMotion>
         </div>
@@ -154,7 +159,10 @@ const SendUsMessage = () => {
               </div>
 
               <div className="w-full text-white rounded-xl border border-[#3FC5FF] bg-[#3CACDC6E] p-4 flex justify-start items-center gap-3 relative z-10">
-                <img src={blue_mail} alt="email" />
+                {/* <img src={blue_mail} alt="email" /> */}
+                <div className="py-1 px-1.5 bg-white rounded-full">
+                  <p className="text-lg">📧</p>
+                </div>
                 <div className="text-sm md:text-base">
                   <p className="font-medium">Email</p>
                   <p className="text-sm">info@thetalentcounsel.com</p>

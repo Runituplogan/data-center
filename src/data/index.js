@@ -62,3 +62,31 @@ export const open_roles = [
     imgSrc: civilEngr,
   },
 ];
+
+export const our_values = [
+  {
+    label: "Ownership Mindset.",
+    description:
+      "Empowered. Focused. Invested. Accountable. Committed to the success of others.",
+  },
+  {
+    label: "Continuos improvement.",
+    description:
+      "Learn. Mentor. Support. Evolve. Embrace opportunities to grow every day.",
+  },
+  {
+    label: "Community.",
+    description:
+      "Involved. Collabrate. Respect. Fun. Working together to achive goals.",
+  },
+  {
+    label: "Excellence.",
+    description:
+      "Quality. Innovation. Adaptable. Delivering designs and solutions that provide value.",
+  },
+  {
+    label: "Service.",
+    description:
+      "Caring. Dedicated. Passionate. Responsive. Supportive of our clients, community and team.",
+  },
+];

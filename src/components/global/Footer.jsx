@@ -7,7 +7,7 @@ import { XDivMotion } from "../DivMotion";
 const Footer = () => {
   const date = new Date();
   return (
-    <footer className="mt-auto px-4 md:px-10 lg:px-20 py-7 sm:p-7 bg-gray-50">
+    <footer className="mt-auto px-4 md:px-10 lg:px-20 py-7 sm:p-7 bg-white">
       <div className="w-full border-t pt-5 flex justify-start sm:justify-between sm:items-center sm:flex-row flex-col gap-5 md:gap-0">
         <div className="flex justify-start items-end">
           <Link to="/#home" className="pr-1 h-12 w-12 md:h-full md:w-full">
