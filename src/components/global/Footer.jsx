@@ -13,9 +13,10 @@ const Footer = () => {
           <Link to="/#home" className="pr-1 h-12 w-12 md:h-full md:w-full">
             <img src={logo} alt="Talent councel logo" />
           </Link>
+          <div className="h-7 sm:h-10 md:h-12 bg-black px-[1px] my-auto"></div>
           <XDivMotion
             initial={-30}
-            className="font-bold text-sm md:text-lg pl-2 md:pl-4 border-l-2 h-8 md:h-12 self-center flex justify-center items-center"
+            className="font-bold text-sm md:text-lg pl-2 md:pl-4 h-8 md:h-12 self-center flex justify-center items-center"
           >
             <p>Datacenters</p>
           </XDivMotion>

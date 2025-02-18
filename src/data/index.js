@@ -8,6 +8,8 @@ import commEngr from "../assets/images/commisioning-engineers.png";
 import automEngr from "../assets/images/automation-engineers.png";
 import hvacDesEngr from "../assets/images/hvac-design-engineers.png";
 import civilEngr from "../assets/images/civil-engineers.png";
+import powerSystEngrs from "../assets/images/power-engineer.jpg";
+import softwareEngrs from "../assets/images/software-devs.jpg";
 
 export const placements = [
   "HVAC Technicians",
@@ -58,35 +60,38 @@ export const open_roles = [
     imgSrc: hvacDesEngr,
   },
   {
+    label: "Power System Engineers",
+    imgSrc: powerSystEngrs,
+  },
+  {
     label: "Civil Engineers",
     imgSrc: civilEngr,
+  },
+  {
+    label: "Software Engineers",
+    imgSrc: softwareEngrs,
   },
 ];
 
 export const our_values = [
   {
-    label: "Ownership Mindset.",
+    label: "Mission-Critical Talent.",
     description:
-      "Empowered. Focused. Invested. Accountable. Committed to the success of others.",
+      "We specialize in hiring top engineers, technicians, and project professionals for data centers and the infrastructure that powers them.",
   },
   {
-    label: "Continuos improvement.",
+    label: "Expanding Nationwide.",
     description:
-      "Learn. Mentor. Support. Evolve. Embrace opportunities to grow every day.",
+      "Operating in 23 states, we provide skilled professionals for data center operations, engineering, HVAC, construction, cabling, power systems, and mission-critical infrastructure.",
   },
   {
-    label: "Community.",
+    label: "Trusted Partnerships.",
     description:
-      "Involved. Collabrate. Respect. Fun. Working together to achive goals.",
+      "50+ companies rely on us to build expert teams across data center operations, HVAC, construction, cabling, power infrastructure, automation, and mission-critical systems.",
   },
   {
-    label: "Excellence.",
+    label: "Proven Placements.",
     description:
-      "Quality. Innovation. Adaptable. Delivering designs and solutions that provide value.",
-  },
-  {
-    label: "Service.",
-    description:
-      "Caring. Dedicated. Passionate. Responsive. Supportive of our clients, community and team.",
+      "With over 1,000 successful hires, we provide direct-hire, contract, and contract-to-hire staffing solutions for data centers and supporting industries.",
   },
 ];

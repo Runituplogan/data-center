@@ -87,13 +87,13 @@ const Home = () => {
           {/* About us */}
           <div
             id="about-us"
-            className="w-full max-w-[1300px] mx-auto xl:px-0 lg:px-7 md:px-5 px-0 pb-20"
+            className="w-full max-w-[1300px] mx-auto xl:px-4 lg:px-7 md:px-5 px-4 pb-20"
           >
             <div className="w-full pt-14 mb-10 text-[#121212] mx-auto">
               <div className="relative px-2 w-max">
                 <div className="absolute right-0 bg-[#FFFF00] left-0 -bottom-2 h-5"></div>
                 <YDivMotion>
-                  <h2 className="uppercase w-full flex items-center gap-3 text-center md:text-left text-xl relative z-10 text-[#2a2a2a]">
+                  <h2 className="uppercase w-full flex items-center gap-3 text-center md:text-left sm:text-lg md:text-xl relative z-10 text-[#2a2a2a]">
                     About us.
                   </h2>
                 </YDivMotion>
@@ -285,7 +285,7 @@ const Home = () => {
           <div className="w-full">
             <div className="mt-16 max-w-[1200px] mb-10 bg-white flex flex-col items-center mx-auto">
               <YDivMotion>
-                <h1 className="w-full text-center text-[#121212] font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl flex justify-center items-center gap-1">
+                <h1 className="w-full text-center text-[#121212] font-bold text-base sm:text-2xl md:text-3xl lg:text-4xl flex justify-center items-center gap-1">
                   <div className="px-2 inline-block relative overflow-hidden text-white">
                     <span className="relative z-10">Active Partnerships</span>
                     <span className="animate-scale-in absolute"></span>

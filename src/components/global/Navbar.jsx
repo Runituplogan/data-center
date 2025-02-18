@@ -6,17 +6,31 @@ import { XDivMotion, YDivMotion } from "../DivMotion";
 const Navbar = ({ onOpen }) => {
   return (
     <nav className="fixed md:absolute top-0 right-0 left-0 p-0 lg:px-16 md:pt-4 sm:px-3 md:px-8 z-[90]">
-      <div className="bg-white md:bg-transparent w-full flex justify-between items-center gap-3 px-10 py-3 md:shadow-none shadow-md">
-        <YDivMotion className="flex justify-start items-end overflow-hidden z-20">
+      <div className="bg-white md:bg-transparent w-full flex justify-between items-center gap-3 px-5 sm:px-10 py-3 md:shadow-none shadow-md">
+        <div className="flex justify-start items-end z-20 w-max md:hidden">
           <img
             src={logo}
             alt="Talent councel logo"
             className="pr-1 h-12 w-12 md:h-full md:w-full z-10"
           />
+          <div className="h-7 bg-black px-[1px] my-auto"></div>
+
+          <div className="text-black font-bold text-xs sm:text-sm pl-2 md:pl-4 h-8 self-center flex justify-center items-center">
+            <p>Datacenters</p>
+          </div>
+        </div>
+        <YDivMotion className="justify-start items-end overflow-hidden z-20 md:flex hidden">
+          <img
+            src={logo}
+            alt="Talent councel logo"
+            className="pr-1 h-12 w-12 md:h-full md:w-full z-10"
+          />
+          <div className="h-10 md:h-12 bg-white px-[1px] my-auto"></div>
+
           <XDivMotion
             delay={1}
             initial={-30}
-            className="text-black md:text-white z-0 font-bold text-sm md:text-lg pl-2 md:pl-4 border-l-2 h-8 md:h-12 self-center flex justify-center items-center"
+            className="text-black md:text-white z-0 font-bold text-sm md:text-lg pl-2 md:pl-4 h-8 md:h-12 self-center flex justify-center items-center"
           >
             <p>Datacenters</p>
           </XDivMotion>
