@@ -314,8 +314,17 @@ const Home = () => {
                 alt="State placement map"
               />
             </div> */}
-            <div className="max-w-[1000px] mx-auto overflow-hidden">
-              <InlineWidget url="https://calendly.com/talentcounsel/services" />
+            <div className="relative z-[99] rounded-[13px] w-[100%] h-[700px] flex items-center justify-center">
+              <InlineWidget
+                styles={{
+                  height: "100%",
+                  width: "96%",
+                  padding: "0px",
+                  margin: "0px",
+                  border: " none",
+                }}
+                url="https://calendly.com/talentcounsel/services"
+              />
             </div>
           </div>
         </div>
