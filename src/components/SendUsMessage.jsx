@@ -61,7 +61,7 @@ const SendUsMessage = () => {
         <div className="w-full max-w-lg mx-auto px-2">
           <YDivMotion delay={0.5}>
             <h1 className="w-full text-center text-[#121212] font-semibold text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
-              <div className="px-2 inline-block relative overflow-hidden text-white">
+              <div className="px-2 inline-block relative overflow-hidden text-white py-1.5">
                 <span className="relative z-10">Send us a message</span>
                 <span className="animate-scale-in absolute"></span>
               </div>
@@ -193,7 +193,7 @@ const SendUsMessage = () => {
               </Link>
 
               <Link
-                to={"mailto:charles@thetalentcounsel.com"}
+                to={"mailto:info@thetalentcounsel.com"}
                 className="text-[#3A3A3A] z-10"
               >
                 <img src={mail} alt="mail" />

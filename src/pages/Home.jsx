@@ -173,7 +173,7 @@ const Home = () => {
 
           <OurValues />
 
-          {/* Open Roles */}
+          {/* Roles we support */}
           <div id="open-roles" className="w-full">
             <div className="max-w-[1000px] w-full mx-auto">
               <div className="w-full px-2 md:px-0 pt-16 pb-10 text-[#121212]">
@@ -236,8 +236,8 @@ const Home = () => {
           </div>
 
           {/* Successful placements blue background */}
-          <div className="w-full">
-            <div className="mt-10 py-10 w-full relative radical-blue overflow-hidden h-max md:h-[500px]">
+          <div className="w-full pt-10 py-10" id="successful-placements">
+            <div className=" w-full relative radical-blue overflow-hidden h-max md:h-[500px]">
               <img
                 src={blue_sun}
                 alt="radical eclipse"
@@ -276,11 +276,11 @@ const Home = () => {
           </div>
 
           {/* Successful placemnets grid */}
-          <div className="w-full">
+          {/* <div className="w-full">
             <div className="w-full max-w-[1300px] mx-auto p-5 md:p-10 lg:py-20">
               <SuccessfulPlacements />
             </div>
-          </div>
+          </div> */}
           {/* Sate placement section */}
           <div className="w-full">
             <div className="mt-16 max-w-[1200px] mb-10 bg-white flex flex-col items-center mx-auto">
@@ -314,7 +314,7 @@ const Home = () => {
                 alt="State placement map"
               />
             </div> */}
-            <div className="max-w-[1000px] mx-auto overflow-y-hid">
+            <div className="max-w-[1000px] mx-auto overflow-hidden">
               <InlineWidget url="https://calendly.com/talentcounsel/services" />
             </div>
           </div>

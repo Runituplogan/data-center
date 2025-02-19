@@ -2,7 +2,7 @@ import { YDivMotion } from "./DivMotion";
 
 const SuccessfulPlacements = () => {
   return (
-    <div id="successful-placements" className="w-full md:pt-2 pt-7">
+    <div className="w-full md:pt-2 pt-7">
       {/* <h1 className="w-full text-center text-[#121212] font-medium text-xl md:text-3xl">
         Successful Placements
       </h1> */}

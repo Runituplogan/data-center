@@ -33,7 +33,7 @@ const MobileNavbar = ({ open, onClose }) => {
           to="/#open-roles"
           className="text-[#3A3A3A] hover:underline"
         >
-          Open Roles
+          Supported Roles
         </Link>
         <Link
           onClick={onClose}

@@ -30,7 +30,7 @@ const Footer = () => {
             About Us
           </Link>
           <Link to="/#open-roles" className="text-[#3A3A3A] hover:underline">
-            Open Roles
+            Supported Roles
           </Link>
           <Link
             to="/#successful-placements"
@@ -43,7 +43,7 @@ const Footer = () => {
 
       <div className="w-full border-t md:border-none pt-3 flex justify-between items-center flex-wrap text-[#3A3A3A] gap-5 mt-4">
         <p>
-          Copyright: © {date.getFullYear()} Talent Counsel. All Rights Reserved.
+          Copyright: © {date.getFullYear()} TalentCounsel. All Rights Reserved.
         </p>
 
         <div className="flex justify-start items-center gap-4 md:gap-7 lg:gap-12">
