@@ -68,7 +68,7 @@ export const open_roles = [
     imgSrc: civilEngr,
   },
   {
-    label: "Software Engineers",
+    label: "Network Engineers",
     imgSrc: softwareEngrs,
   },
 ];

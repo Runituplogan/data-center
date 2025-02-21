@@ -62,7 +62,7 @@ const Footer = () => {
               <img src={x} alt="x" />
             </Link> */}
             <Link
-              to={"mailto:charles@thetalentcounsel.com"}
+              to={"mailto:info@thetalentcounsel.com"}
               className="text-[#3A3A3A]"
             >
               <img src={mail} alt="mail" />

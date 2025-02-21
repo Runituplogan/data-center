@@ -145,7 +145,7 @@ const Home = () => {
                     <p>
                       We provide skilled professionals who design, build,
                       operate, and sustain the infrastructure that keeps data
-                      centers running
+                      centers running.
                     </p>
                   </YDivMotion>
                 </div>
@@ -215,13 +215,18 @@ const Home = () => {
                         className="rounded-lg bg-white shadow w-[150px] md:w-[250px] lg:w-[300px] sm:w-[280px] h-[170px] group"
                         key={index}
                       >
-                        <div className="relative h-20 w-full overflow-hidden">
-                          <div className="absolute rounded-t-md inset-0 bg-black opacity-10"></div>
-                          <img
+                        <div
+                          style={{
+                            backgroundImage: `url(${item.imgSrc})`,
+                          }}
+                          className="relative h-20 w-full overflow-hidden bg-top bg-cover rounded-t-md"
+                        >
+                          <div className="absolute rounded-t-md inset-0 bg-black opacity-5"></div>
+                          {/* <img
                             src={item.imgSrc}
-                            className="h-20 object-cover ease transition-all duration-200 hover:scale-105 rounded-t-lg w-full group-hover:scale-105 "
+                            className="h-20 object-cover bg-center ease transition-all duration-200 hover:scale-105 rounded-t-lg w-full group-hover:scale-105 "
                             alt={item.label}
-                          />
+                          /> */}
                         </div>
 
                         <p className="text-center font-semibold md:font-medium w-full py-5 sm:px-10 text-sm sm:text-lg md:text-xl leading-6">
