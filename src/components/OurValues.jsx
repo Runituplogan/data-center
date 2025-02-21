@@ -37,7 +37,7 @@ const OurValues = () => {
         {/* Left Chevron for Previous */}
         <XDivMotion
           initial={-30}
-          className="absolute left-0 md:-left-10 top-[40%]"
+          className="absolute left-0 md:-left-10 top-[40%] sm:block hidden"
         >
           <FaCircleChevronLeft
             size={27}
@@ -47,7 +47,7 @@ const OurValues = () => {
         </XDivMotion>
 
         {/* Right Chevron for Next */}
-        <XDivMotion className="absolute right-0 md:-right-10 top-[40%]">
+        <XDivMotion className="absolute right-0 md:-right-10 top-[40%] sm:block hidden">
           <FaCircleChevronRight
             size={27}
             onClick={handleNext}

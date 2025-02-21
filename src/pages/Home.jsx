@@ -242,7 +242,7 @@ const Home = () => {
 
           {/* Successful placements blue background */}
           <div className="w-full pt-10 py-10" id="successful-placements">
-            <div className=" w-full relative radical-blue overflow-hidden h-max md:h-[500px]">
+            <div className=" w-full relative radical-blue overflow-hidden h-[600px] md:h-[500px]">
               <img
                 src={blue_sun}
                 alt="radical eclipse"
