@@ -18,8 +18,8 @@ const HeroCard = () => {
         </YDivMotion>
 
         <YDivMotion delay={0.7}>
-          <p className="text-left pl-2 sm:pl-0 gilroy-bold w-full text-white font-medium pb-40 text-xs whitespace-nowrap sm:text-base lg:text-lg xl:text-xl mt-5 md:mt-8">
-            Engineering | Design | T ech | Build | Manufacturing | IT | Software
+          <p className="text-left pl-2 sm:pl-0 gilroy-bold w-full text-white font-medium pb-40 text-[11px] whitespace-nowrap sm:text-base lg:text-lg xl:text-xl mt-5 md:mt-8">
+            Engineering | Design | Tech | Build | Manufacturing | IT | Software
           </p>
         </YDivMotion>
       </div>
@@ -33,6 +33,8 @@ const HeroCard = () => {
         autoPlay
         muted
         loop
+        preload="auto"
+        crossOrigin="anonymous"
         className="object-cover w-full h-full absolute inset-0 z-0"
       >
         <source src="/video/hero-video.mp4" type="video/mp4" />
