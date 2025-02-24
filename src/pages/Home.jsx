@@ -102,7 +102,7 @@ const Home = () => {
               <div className="md:mt-12 lg:mt-20 xl:mt-28 mt-10 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 lg:gap-20 xl:gap-36 text-[#2a2a2a]">
                 <div className="space-y-5 text-base">
                   <YDivMotion className="w-full">
-                    <h1 className="md:text-left text-center font-semibold text-xl sm:text-2xl gilroy-bold w-full">
+                    <h1 className="text-left font-semibold text-xl sm:text-2xl gilroy-bold w-full">
                       We are a specialized team building and talent management
                       firm dedicated to
                       <span className="app-bg relative leading-[1 p-0.5 bg-[]">
