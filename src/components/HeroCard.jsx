@@ -1,15 +1,40 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { YDivMotion } from "./DivMotion";
 
 const HeroCard = () => {
+  const [videoUrl, setVideoUrl] = useState(null);
+  const videoStream = "/video/hero-video.mp4";
+
   useEffect(() => {
-    const videoElement = document.getElementById("hero-video");
-    if (videoElement) {
-      videoElement.play();
+    const makeURL = (object) => {
+      return window.URL
+        ? window.URL.createObjectURL(object)
+        : window.webkitURL.createObjectURL(object);
+    };
+
+    const fetchVideo = async () => {
+      try {
+        let blob = await fetch(videoStream).then((r) => r.blob());
+        setVideoUrl(makeURL(blob));
+      } catch (error) {
+        console.error("Error fetching video:", error);
+      }
+    };
+
+    if (videoStream) {
+      fetchVideo();
     }
-  }, []);
+
+    return () => {
+      if (videoUrl) {
+        URL.revokeObjectURL(videoUrl); // Cleanup URL object when component unmounts
+      }
+    };
+  }, [videoStream]);
+
+  console.log(videoUrl);
 
   return (
     <div className="pt-20 pl-0 pr-4 sm:px-10 md:px-20 lg:px-28 relative h-[100vh] flex flex-col justify-center items-center">
@@ -44,11 +69,13 @@ const HeroCard = () => {
         controls={false}
         muted
         loop
+        src={videoUrl}
         preload="auto"
         id="hero-video"
         className="object-cover w-full h-full absolute inset-0 z-0"
       >
-        <source src="/video/hero-video.mp4" type="video/mp4" />
+        <source src={videoUrl} type="video/mp4" />
+        {/* <source src="/video/hero-video.mp4" type="video/mp4" /> */}
       </video>
 
       {/* <img
