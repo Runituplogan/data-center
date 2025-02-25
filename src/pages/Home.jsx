@@ -7,21 +7,19 @@ import blue_sun from "../assets/images/blue-sun.svg";
 import state_map from "../assets/images/state-map.png";
 import white_star from "../assets/images/white-star.png";
 import Footer from "../components/global/Footer";
-import SuccessfulPlacements from "../components/SuccessfulPlacements";
 import SendUsMessage from "../components/SendUsMessage";
 import Marquee from "../components/Marquee";
 import MobileNavbar from "../components/global/MobileNavbar";
 import { InlineWidget } from "react-calendly";
 import { motion, useInView } from "framer-motion";
 import { useLocation } from "react-router-dom";
-import { XDivMotion, YDivMotion } from "../components/DivMotion";
+import { YDivMotion } from "../components/DivMotion";
 import Counter from "../components/Counter";
 import OurValues from "../components/OurValues";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
   const textRef = useRef(null);
-  const isTextInView = useInView(textRef, { once: true, margin: "-100px" });
 
   const divRef = useRef(null);
   const isDivInView = useInView(divRef, { once: true, margin: "-100px" });
@@ -87,7 +85,7 @@ const Home = () => {
           {/* About us */}
           <div
             id="about-us"
-            className="w-full max-w-[1300px] mx-auto xl:px-4 lg:px-7 md:px-5 px-4 pb-20"
+            className="w-full max-w-[1300px] py-10 sm:py-0 mx-auto xl:px-4 lg:px-7 md:px-5 px-4 pb-20"
           >
             <div className="w-full pt-14 mb-10 text-[#121212] mx-auto">
               <div className="relative px-2 w-max">
@@ -174,7 +172,7 @@ const Home = () => {
           <OurValues />
 
           {/* Roles we support */}
-          <div id="open-roles" className="w-full">
+          <div id="open-roles" className="w-full pt-10 sm:py-0">
             <div className="max-w-[1000px] w-full mx-auto">
               <div className="w-full px-2 md:px-0 pt-16 pb-10 text-[#121212]">
                 <YDivMotion>
