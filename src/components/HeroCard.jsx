@@ -47,7 +47,7 @@ const HeroCard = () => {
   console.log(videoUrl);
 
   return (
-    <div className="pt-20 pl-0 pr-4 sm:px-10 md:px-20 lg:px-28 relative h-[100vh] flex flex-col justify-center items-center">
+    <div className="pt-20 pl-0 sm:px-10 md:px-20 lg:px-28 relative h-[100vh] flex flex-col justify-center items-center">
       <div className="absolute inset-0 bg-black opacity-55 z-[2]"></div>
       <div className="relative z-10 self-start mt-0 md:mt-20">
         <YDivMotion>
