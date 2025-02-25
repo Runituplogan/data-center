@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { YDivMotion } from "./DivMotion";
 
 const HeroCard = () => {
   const [videoUrl, setVideoUrl] = useState(null);
   const videoStream = "/video/hero-video.mp4";
+  const videoRef = useRef(null);
 
   useEffect(() => {
     const makeURL = (object) => {
@@ -33,6 +34,15 @@ const HeroCard = () => {
       }
     };
   }, [videoStream]);
+
+  // Play the video automatically when videoUrl is set
+  useEffect(() => {
+    if (videoUrl && videoRef.current) {
+      videoRef.current
+        .play()
+        .catch((error) => console.error("Auto-play failed:", error));
+    }
+  }, [videoUrl]);
 
   console.log(videoUrl);
 
@@ -72,6 +82,7 @@ const HeroCard = () => {
         src={videoUrl}
         preload="auto"
         id="hero-video"
+        ref={videoRef}
         className="object-cover w-full h-full absolute inset-0 z-0"
       >
         <source src={videoUrl} type="video/mp4" />
