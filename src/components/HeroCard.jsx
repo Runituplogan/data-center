@@ -79,14 +79,14 @@ const HeroCard = () => {
         controls={false}
         muted
         loop
-        src={videoUrl}
+        // src={videoUrl}
         preload="auto"
         id="hero-video"
         ref={videoRef}
         className="object-cover w-full h-full absolute inset-0 z-0"
       >
-        <source src={videoUrl} type="video/mp4" />
-        {/* <source src="/video/hero-video.mp4" type="video/mp4" /> */}
+        {/* <source src={videoUrl} type="video/mp4" /> */}
+        <source src="/video/hero.mp4" type="video/mp4" />
       </video>
 
       {/* <img
