@@ -31,10 +31,10 @@ const HeroCard = () => {
       <video
         playsInline
         autoPlay
+        controls={false}
         muted
         loop
         preload="auto"
-        crossOrigin="anonymous"
         className="object-cover w-full h-full absolute inset-0 z-0"
       >
         <source src="/video/hero-video.mp4" type="video/mp4" />
