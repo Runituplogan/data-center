@@ -1,6 +1,16 @@
+"use client";
+
+import { useEffect } from "react";
 import { YDivMotion } from "./DivMotion";
 
 const HeroCard = () => {
+  useEffect(() => {
+    const videoElement = document.getElementById("hero-video");
+    if (videoElement) {
+      videoElement.play();
+    }
+  }, []);
+
   return (
     <div className="pt-20 pl-0 pr-4 sm:px-10 md:px-20 lg:px-28 relative h-[100vh] flex flex-col justify-center items-center">
       <div className="absolute inset-0 bg-black opacity-55 z-[2]"></div>
@@ -35,7 +45,8 @@ const HeroCard = () => {
         muted
         loop
         preload="auto"
-        // className="object-cover w-full h-full absolute inset-0 z-0"
+        id="hero-video"
+        className="object-cover w-full h-full absolute inset-0 z-0"
       >
         <source src="/video/hero-video.mp4" type="video/mp4" />
       </video>
