@@ -1,6 +1,9 @@
 body{
     overflow-x: hidden;
 }
+html{
+    overflow-x: hidden;
+}
 .blue-gradient {
     background: linear-gradient(270.38deg, #0884CC -29.13%, #3AB6FE 99.67%);
 }
