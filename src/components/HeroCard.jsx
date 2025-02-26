@@ -4,7 +4,7 @@ import poster from '../assets/images/poster.png';
 
 const HeroCard = () => {
   return (
-    <div className="pt-20 pl-0 sm:px-10 md:px-20 lg:px-28 relative h-[100dvh] flex flex-col justify-center items-center">
+    <div className="pt-20 pl-0 sm:px-10 md:px-20 lg:px-28 relative h-[100svh] flex flex-col justify-center items-center">
       <div className="absolute inset-0 bg-black opacity-55 z-[2]"></div>
       <div className="relative z-10 self-start mt-0 md:mt-20">
         <YDivMotion>
