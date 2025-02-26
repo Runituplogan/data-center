@@ -1,6 +1,6 @@
 import { YDivMotion } from "./DivMotion";
 import heroBg from "../../public/video/hero-video.mp4";
-import poster from '../assets/poster.png'
+import poster from '../assets/images/poster.png';
 
 const HeroCard = () => {
   return (
