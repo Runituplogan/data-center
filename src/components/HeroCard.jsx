@@ -18,7 +18,6 @@ const HeroCard = () => {
             </div>
           </h1>
         </YDivMotion>
-
         <YDivMotion delay={0.7}>
           <p className="text-left pl-2 sm:pl-0 gilroy-bold w-full text-white font-medium pb-40 text-[11px] whitespace-nowrap sm:text-base lg:text-lg xl:text-xl mt-5 md:mt-8">
             Engineering | Design | Tech | Build | Manufacturing | IT | Software
