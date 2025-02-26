@@ -1,5 +1,6 @@
 import { YDivMotion } from "./DivMotion";
 import heroBg from "../../public/video/hero-video.mp4";
+import poster from '../assets/poster.png'
 
 const HeroCard = () => {
   return (
@@ -31,6 +32,7 @@ const HeroCard = () => {
         muted
         loop
         controls={false}
+        poster={poster}
         preload="auto"
         className="object-cover w-full h-full absolute inset-0 z-0"
       >
