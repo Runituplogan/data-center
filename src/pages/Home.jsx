@@ -264,9 +264,9 @@ const Home = () => {
                 </div>
 
                 <p className="text-white w-full md:w-[50%] text-lg md:text-xl lg:text-2xl z-10 text-center md:text-left">
-                  With countless successful placements, we connect the right
-                  talent with the right roles. Trust us to help you achieve your
-                  hiring goals effortlessly.
+                  With successful placements across companies that build, power,
+                  and maintain data center infrastructure, we connect top talent
+                  with the roles that keep critical operations running.
                 </p>
               </div>
 
