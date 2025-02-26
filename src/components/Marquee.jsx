@@ -13,7 +13,7 @@ const Marquee = ({ delay = 0.1, direction = "left" }) => {
         }}
         transition={{
           repeat: Infinity,
-          duration: 35,
+          duration: 20,
           ease: "linear",
           delay,
         }}
