@@ -1,20 +1,7 @@
-"use client";
-
-import { useEffect, useRef } from "react";
 import { YDivMotion } from "./DivMotion";
+import heroBg from "../../public/video/hero-video.mp4";
 
 const HeroCard = () => {
-  const videoRef = useRef(null);
-
-  // Ensure video auto-plays when the component mounts
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current
-        .play()
-        .catch((error) => console.error("Auto-play failed:", error));
-    }
-  }, []);
-
   return (
     <div className="pt-20 pl-0 sm:px-10 md:px-20 lg:px-28 relative h-[100vh] flex flex-col justify-center items-center">
       <div className="absolute inset-0 bg-black opacity-55 z-[2]"></div>
@@ -45,10 +32,9 @@ const HeroCard = () => {
         loop
         controls={false}
         preload="auto"
-        ref={videoRef}
         className="object-cover w-full h-full absolute inset-0 z-0"
       >
-        <source src="/video/hero-video.mp4" type="video/mp4" />
+        <source src={heroBg} type="video/mp4" />
       </video>
     </div>
   );
